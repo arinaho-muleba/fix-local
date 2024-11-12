@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Content Site</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+  </head>
+  <body>
+    <nav><header class="full-header h-14 px-5 mb-6">
+    <section class="clickable-header flex items-center" onclick$={handleClickHeader}>
+        <section class="title-container flex items-center justify-between">
+            <img src="/assets/media/text-colored-logo.svg" alt="Logo"/>
+        </section>
+        <ul class="sub-buttons justify-end flex gap-4 flex-1 text-neutral-700">
+            <li>Home</li>
+            <li>About us</li>
+            <li>Partners</li>
+            <li>Contact us</li>
+        </ul>
+    </section>
+    <p class="hamburger-menu" onclick$={handleClick}>
+        <LuAlignJustify/>
+    </p>
+    <style></style>
+</header></nav>
+    <main class="px-6 py-10 bg-[#D1EBEF] flex flex-col gap-4">
+      <p class="text-xl md:text-2xl mt-12">
+        FixLocal helps you easily find out how to report local issues or fix them yourself with step-by-step guides and helpful
+        articles.
+      </p>
+      <p>What would you like to learn about?</p>
+      <div class="flex gap-4">
+        <button onclick="window.location.href='./report/'" class="button bg-accent-blue whitespace-nowrap max-sm:flex-1">
+          1. How to Report It
+        </button>
+        <button onclick="window.location.href='./fix/'" class="button bg-accent-green whitespace-nowrap max-sm:flex-1">2. How to
+          Fix It</button>
+      </div>
+      
+    </main>
+    <div class="flex flex-col gap-6">
+        <h1 class="text-neutral-700 font-bold text-2xl">Success Stories:</h1>
+        <div id="articleList" class="flex flex-wrap gap-4 mt-4">
+          
+            <a href="/stories/article1/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="story" data-location="City A" data-title="Sample Article 5" data-description="This is a sample article description.">
+              <article>
+                <img src="" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                <h2 class="text-neutral-700 font-bold text-lg px-1">Sample Article 5</h2>
+                <p class="text-neutral-700 text-sm px-1">This is a sample article description.</p>
+              </article>
+            </a>
+          
+            <a href="/stories/article2/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="story" data-location="City A" data-title="Sample Article 2" data-description="This is a sample article description.">
+              <article>
+                <img src="" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                <h2 class="text-neutral-700 font-bold text-lg px-1">Sample Article 2</h2>
+                <p class="text-neutral-700 text-sm px-1">This is a sample article description.</p>
+              </article>
+            </a>
+          
+            <a href="/stories/article3/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="story" data-location="City A" data-title="Sample Article 4" data-description="This is a sample article description.">
+              <article>
+                <img src="" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                <h2 class="text-neutral-700 font-bold text-lg px-1">Sample Article 4</h2>
+                <p class="text-neutral-700 text-sm px-1">This is a sample article description.</p>
+              </article>
+            </a>
+          
+        </div>
+        <a class="underline text-secondary-orange">See more Stories</a>
+      </div>
+    <footer><footer>
+    <section class="upper-footer">
+        <section class="logo-wrapper">
+            <a href="/">
+                <img src="/assets/media/text-logo.svg" class="custom-max-w-smaller" alt="fix local logo" width="152" height="29"/>
+            </a>
+            <p>FixLocal aims to empower South African communities to solve real-world problems.</p>
+        </section>
+        <ul class="lists-wrapper">
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer" href="/">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer" href="/About-us">
+                    About us
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer">
+                    Partners
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer">
+                    Contact us
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer" href="/Terms-and-Conditions">
+                    Terms and Conditions
+                </a>
+            </li>
+        </ul>
+        <section class="lists-wrapper">
+            <ul class="lists">
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Electricity
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Environment
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Health
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Parks and Recreation
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Roads, Transport and Traffic
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Safety and Security
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Storm Water and Flooding
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Water and Sanitation
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+        <section class="lists">
+            <strong>Connect with us</strong>
+            <section class="social-media-wrapper">
+                <a>
+                    <LuFacebook class="social"/>
+                </a>
+                <a>
+                    <LuYoutube class="social"/>
+                </a>
+            </section>
+        </section>
+    </section>
+    <section class="lower-footer">
+        Copyright 2024 &copy; fixlocal.org
+    </section>
+</footer></footer>
+  </body>
+</html>

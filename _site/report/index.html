@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>How to Report It</title>
+        <link rel="stylesheet" href="/css/styles.css"/>
+    </head>
+    <body class="bg-neutral-200 ">
+        <nav><header class="full-header h-14 px-5 mb-6">
+    <section class="clickable-header flex items-center" onclick$={handleClickHeader}>
+        <section class="title-container flex items-center justify-between">
+            <img src="/assets/media/text-colored-logo.svg" alt="Logo"/>
+        </section>
+        <ul class="sub-buttons justify-end flex gap-4 flex-1 text-neutral-700">
+            <li>Home</li>
+            <li>About us</li>
+            <li>Partners</li>
+            <li>Contact us</li>
+        </ul>
+    </section>
+    <p class="hamburger-menu" onclick$={handleClick}>
+        <LuAlignJustify/>
+    </p>
+    <style></style>
+</header></nav>
+        <main class="px-4 py-6">
+            <h1 class="text-blue-500 text-2xl font-semibold">How to report</h1>
+            <input
+            type="text" id="search" placeholder="Search articles..." class="mt-4 p-2 border rounded">
+            <!-- Location Filter -->
+            <select id="locationFilter" class="mt-4 p-2 border rounded bg-neutral-50">
+                <option value="">Select Location</option>
+                
+                    <option value="Johannesburg">Johannesburg</option>
+                
+                    <option value="Cape Town">Cape Town</option>
+                
+            </select>
+            <!-- Category Filter -->
+            <select id="categoryFilter" class="mt-4 p-2 border rounded bg-neutral-50">
+                <option value="">Select Category</option>
+                
+                    <option value="Electricity">Electricity</option>
+                
+                    <option value="Environment">Environment</option>
+                
+                    <option value="Health">Health</option>
+                
+                    <option value="Parks and Recreation">Parks and Recreation</option>
+                
+                    <option value="Roads, Transport and Traffic">Roads, Transport and Traffic</option>
+                
+                    <option value="Safety and Security">Safety and Security</option>
+                
+                    <option value="Storm Water and Flooding">Storm Water and Flooding</option>
+                
+                    <option value="Water and Sanitation">Water and Sanitation</option>
+                
+            </select>
+            <!-- Subcategory Filter -->
+            <select id="subcategoryFilter" class="mt-4 p-2 border rounded bg-neutral-50">
+                <option value="">Select Subcategory</option>
+                <!-- Subcategories will be populated by JavaScript based on selected category -->
+            </select>
+            <!-- Article List -->
+            <div id="articleList" class="flex flex-wrap gap-4 mt-4">
+                
+                    <a href="/howToReport/article1/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="howToReport$ health$ clinic challenges$ hospital challenges$ air pollution$ water pollution$ food safety$ pest control$ noise pollution" data-location="Johannesburg" data-title="How to report HEALTH SERVICES AND ENVIRONMENTAL HEALTH issues in Joburg" data-description="This article details how to report health services and environmental health issues in Johannesburg, including clinic and hospital challenges, air and water pollution, and pest control. It provides contact information for relevant departments such as the City of Johannesburg Environmental Health Department, Legal Health and Regulatory Affairs, and the Department of Forestry, Fisheries and the Environment, along with instructions for logging issues through the City’s e-services platform.">
+                        <article>
+                            <img src="https://storageforfixlocal.blob.core.windows.net/dev/content/140d5e4e-76d7-4fb4-877a-a6f0aa3f43e6/images/140d5e4e-76d7-4fb4-877a-a6f0aa3f43e6.webp" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                            <h2 class="text-neutral-700 font-bold text-lg px-1">How to report HEALTH SERVICES AND ENVIRONMENTAL HEALTH issues in Joburg</h2>
+                            <p class="text-neutral-700 text-sm px-1">This article details how to report health services and environmental health issues in Johannesburg, including clinic and hospital challenges, air and water pollution, and pest control. It provides contact information for relevant departments such as the City of Johannesburg Environmental Health Department, Legal Health and Regulatory Affairs, and the Department of Forestry, Fisheries and the Environment, along with instructions for logging issues through the City’s e-services platform.</p>
+                        </article>
+                    </a>
+                
+                    <a href="/howToReport/article2/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="howToReport$ roads, transport and traffic$ electricity$ water and sanitation$ parks and recreation$ potholes$ traffic lights$ storm water drains$ blackout/supply$ wires/cables$ pipes$ sewerage$ refuse collection$ grass cutting$ fallen trees" data-location="Cape Town" data-title="How to report a problem in Joburg" data-description="This article provides a comprehensive guide on how to report various city service issues in Johannesburg, such as potholes, power cuts, and water leaks. It outlines specific contact methods for different problems, including phone numbers, emails, and online platforms to ensure effective communication with city services.">
+                        <article>
+                            <img src="https://storageforfixlocal.blob.core.windows.net/dev/content/40433651-a77f-4d57-ad2b-a3362f201359/images/40433651-a77f-4d57-ad2b-a3362f201359.webp" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                            <h2 class="text-neutral-700 font-bold text-lg px-1">How to report a problem in Joburg</h2>
+                            <p class="text-neutral-700 text-sm px-1">This article provides a comprehensive guide on how to report various city service issues in Johannesburg, such as potholes, power cuts, and water leaks. It outlines specific contact methods for different problems, including phone numbers, emails, and online platforms to ensure effective communication with city services.</p>
+                        </article>
+                    </a>
+                
+                    <a href="/howToReport/article3/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="howToReport$ environment$ pollution$ litter$ fallen trees" data-location="Johannesburg" data-title="How to report issues on the ENVIRONMENT in Joburg" data-description="This article outlines how to report environmental issues in Johannesburg, such as pollution, litter, and noise complaints. It provides contact details for the City of Johannesburg Environmental Health Department, Pikitup Johannesburg for waste management, and the Johannesburg Metropolitan Police Department (JMPD) for noise pollution, with additional instructions on how to log faults through the City’s e-services platform.">
+                        <article>
+                            <img src="https://storageforfixlocal.blob.core.windows.net/dev/content/5454aa24-4cb8-4c2c-9f54-8732ec824e39/images/5454aa24-4cb8-4c2c-9f54-8732ec824e39.webp" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                            <h2 class="text-neutral-700 font-bold text-lg px-1">How to report issues on the ENVIRONMENT in Joburg</h2>
+                            <p class="text-neutral-700 text-sm px-1">This article outlines how to report environmental issues in Johannesburg, such as pollution, litter, and noise complaints. It provides contact details for the City of Johannesburg Environmental Health Department, Pikitup Johannesburg for waste management, and the Johannesburg Metropolitan Police Department (JMPD) for noise pollution, with additional instructions on how to log faults through the City’s e-services platform.</p>
+                        </article>
+                    </a>
+                
+            </div>
+        </main>
+        <footer><footer>
+    <section class="upper-footer">
+        <section class="logo-wrapper">
+            <a href="/">
+                <img src="/assets/media/text-logo.svg" class="custom-max-w-smaller" alt="fix local logo" width="152" height="29"/>
+            </a>
+            <p>FixLocal aims to empower South African communities to solve real-world problems.</p>
+        </section>
+        <ul class="lists-wrapper">
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer" href="/">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer" href="/About-us">
+                    About us
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer">
+                    Partners
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer">
+                    Contact us
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer" href="/Terms-and-Conditions">
+                    Terms and Conditions
+                </a>
+            </li>
+        </ul>
+        <section class="lists-wrapper">
+            <ul class="lists">
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Electricity
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Environment
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Health
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Parks and Recreation
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Roads, Transport and Traffic
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Safety and Security
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Storm Water and Flooding
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Water and Sanitation
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+        <section class="lists">
+            <strong>Connect with us</strong>
+            <section class="social-media-wrapper">
+                <a>
+                    <LuFacebook class="social"/>
+                </a>
+                <a>
+                    <LuYoutube class="social"/>
+                </a>
+            </section>
+        </section>
+    </section>
+    <section class="lower-footer">
+        Copyright 2024 &copy; fixlocal.org
+    </section>
+</footer></footer>
+        <script src="/assets/js/filter.js"></script>
+    </body>
+</html>

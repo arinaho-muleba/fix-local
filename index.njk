@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Content Site</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+  </head>
+  <body>
+    <nav>{% include "./partials/nav.njk" %}</nav>
+    <main class="px-6 py-10 bg-[#D1EBEF] flex flex-col gap-4">
+      <p class="text-xl md:text-2xl mt-12">
+        FixLocal helps you easily find out how to report local issues or fix them yourself with step-by-step guides and helpful
+        articles.
+      </p>
+      <p>What would you like to learn about?</p>
+      <div class="flex gap-4">
+        <button onclick="window.location.href='./report/'" class="button bg-accent-blue whitespace-nowrap max-sm:flex-1">
+          1. How to Report It
+        </button>
+        <button onclick="window.location.href='./fix/'" class="button bg-accent-green whitespace-nowrap max-sm:flex-1">2. How to
+          Fix It</button>
+      </div>
+      
+    </main>
+    <div class="flex flex-col gap-6">
+        <h1 class="text-neutral-700 font-bold text-2xl">Success Stories:</h1>
+        <div id="articleList" class="flex flex-wrap gap-4 mt-4">
+          {% for article in collections.story %}
+            <a href="{{ article.url }}" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
+              <article>
+                <img src="{{ article.data.headerImage }}" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                <h2 class="text-neutral-700 font-bold text-lg px-1">{{ article.data.title }}</h2>
+                <p class="text-neutral-700 text-sm px-1">{{ article.data.description }}</p>
+              </article>
+            </a>
+          {% endfor %}
+        </div>
+        <a class="underline text-secondary-orange">See more Stories</a>
+      </div>
+    <footer>{% include "./partials/footer.njk" %}</footer>
+  </body>
+</html>

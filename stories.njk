@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>How to Report It</title>
+        <link rel="stylesheet" href="/css/styles.css"/>
+    </head>
+    <body>
+        <nav>{% include "./partials/nav.njk" %}</nav>
+        <main class="px-4 py-6">
+            <h1>Articles</h1>
+            <input
+            type="text" id="search" placeholder="Search articles...">
+            <!-- Location Filter -->
+            <select id="locationFilter">
+                <option value="">Select Location</option>
+                {% for location in filters.locations %}
+                    <option value="{{ location }}">{{ location }}</option>
+                {% endfor %}
+            </select>
+            <!-- Category Filter -->
+            <select id="categoryFilter">
+                <option value="">Select Category</option>
+                {% for category in filters.categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+            <!-- Subcategory Filter (Populated Dynamically) -->
+            <select id="subcategoryFilter">
+                <option value="">Select Subcategory</option>
+                {% for category, subcategories in filters.subcategories %}
+                    <optgroup label="{{ category }}">
+                        {% for subcategory in subcategories %}
+                            <option value="{{ subcategory }}">{{ subcategory }}</option>
+                        {% endfor %}
+                    </optgroup>
+                {% endfor %}
+            </select>
+            <!-- Article List -->
+            <ul id="articleList">
+                {% for article in collections.story %}
+                    <a href="{{ article.url }}" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
+                        <article>
+                            <img src="{{ article.data.headerImage }}" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                            <h2 class="text-neutral-700 font-bold text-lg px-1">{{ article.data.title }}</h2>
+                            <p class="text-neutral-700 text-sm px-1">{{ article.data.description }}</p>
+                        </article>
+                    </a>
+                {% endfor %}
+            </ul>
+        </main>
+        <footer>{% include "./partials/footer.njk" %}</footer>
+        <script src="./assets/js/filter.js"></script>
+        <!-- JS to handle filtering -->
+    </body>
+</html>

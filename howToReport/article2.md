@@ -1,0 +1,77 @@
+---
+electedId: "40433651-a77f-4d57-ad2b-a3362f201359"
+type: 1
+title: "How to report a problem in Joburg"
+description: "This article provides a comprehensive guide on how to report various city service issues in Johannesburg, such as potholes, power cuts, and water leaks. It outlines specific contact methods for different problems, including phone numbers, emails, and online platforms to ensure effective communication with city services."
+headerImage: "https://storageforfixlocal.blob.core.windows.net/dev/content/40433651-a77f-4d57-ad2b-a3362f201359/images/40433651-a77f-4d57-ad2b-a3362f201359.webp"
+tags:
+  - "roads, transport and traffic"
+  - "electricity"
+  - "water and sanitation"
+  - "parks and recreation"
+  - "potholes"
+  - "traffic lights"
+  - "storm water drains"
+  - "blackout/supply"
+  - "wires/cables"
+  - "pipes"
+  - "sewerage"
+  - "refuse collection"
+  - "grass cutting"
+  - "fallen trees"
+locationId: "eb0bcbaa-2713-42ad-a9a3-0bc0eb5f8552"
+author: null
+authorImage: null
+readTime: null
+id: "40433651-a77f-4d57-ad2b-a3362f201359"
+location: "Cape Town"
+---
+
+# How to report your issue in Joburg
+
+![Placeholder Image](https://storageforfixlocal.blob.core.windows.net/dev/content/40433651-a77f-4d57-ad2b-a3362f201359/images/40433651-a77f-4d57-ad2b-a3362f201359.webp)
+
+To make sure our city services work well, it's important to report problems like potholes, power cuts, water leaks, or fallen trees. Following up and taking more steps if needed can help fix these issues. Here’s how you can report these problems in Joburg.
+
+## Steps for reporting problems
+
+1. **Call the Joburg Call Centre:**
+   - Phone: 0860 56 28 74
+   - Email: joburgconnect@joburg.org.za
+
+2. **Register on Log Now Smart City:**
+   - Sign up at [Log Now](https://www.lognow.co.za/) to report city problems and see FAQs.
+
+3. **Report electricity problems:**
+   - Visit [City Power](http://www.citypower.mobi) for power cuts, meter issues, and cable theft.
+   - Report illegal connections to Joburg Connect at 0860 562 874 or City Power’s Fraud Hotline at 0800 003 251.
+
+4. **Report water problems:**
+   - Email: customer@jwater.co.za
+   - Visit: [Johannesburg Water](http://johannesburgwater.co.za) for burst pipes, sewage issues, and water disruptions.
+
+5. **Report waste management problems:**
+   - Email: info@pikitup.co.za for rubbish removal, bin issues, and recycling.
+   - Report illegal dumping at 011 688 1500 or illegaldumping@pikitup.co.za.
+
+6. **Email Johannesburg Roads Agency (JRA):**
+   - Email: hotline@jra.org.za for road problems like broken traffic lights, potholes, and flooding.
+   - Use SANRAL or PotholeFixGP apps to report potholes.
+
+7. **WhatsApp Johannesburg City Parks and Zoo (JCPZ):**
+   - WhatsApp: 082 803 0748 for grass cutting, tree trimming, and infrastructure repairs. Include the full address, nearby street corners, your contact details, and a photo.
+   - Email: trees@jhbcityparks.com to report fallen trees and hanging branches.
+    
+Source: AI generated
+Photograph supplied by - The City of Joburg
+
+---
+
+- [How to REPORT your issue in Cape Town](/content/e2cdfca7-24f3-4ea7-b3e6-ab3ccbd50277/)
+- [How to ESCALATE your issue](/content/5c82dc08-0baf-410a-8de9-f7959a4beb3d/)
+- [How to set up a STREET WhatsApp GROUP](/content/d6dea590-a527-494e-a551-c338f3bac46b/)
+- [How to set up a RESIDENTS' or RATE PAYERS' ASSOCIATION](/content/70f67bab-f596-433f-9f13-f6545cff700e/)
+- [How to set up a NEIGHBOURHOOD WATCH](/content/475ff4fc-c8c6-4c0c-a454-6f6dc42c6ce8/)
+- [How to set up or join a COMMUNITY POLICING FORUM (CPF)](/content/475ff4fc-c8c6-4c0c-a454-6f6dc42c6ce8/)
+- [How to ORGANISE to create change](/content/2797a122-a084-4237-8d99-8e1c4aea4f6e/)
+- [How to use MEDIA to create pressure for change](/content/c13796b6-860b-4830-ba7f-c0113cf9daae/)

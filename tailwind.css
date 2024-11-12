@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+  @apply items-center flex gap-2 rounded-lg px-5 py-2 text-base font-semibold text-white transition-all hover:-translate-y-1 hover:shadow-lg md:px-3 md:py-4 md:text-lg lg:text-2xl max-sm:px-2;
+}
+
+/*!Start of markdown styling*/
+.markdown-article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.markdown-top-image {
+  width: 100%;
+  height: 100vh;
+  @apply max-h-[25.75rem] rounded-2xl;
+}
+
+.markdown-body {
+  @apply content-max-width overflow-x-auto pb-10;
+}
+
+.content-page-width {
+  @apply max-w-80rem px-2 md:px-6 lg:px-10;
+}
+
+.content-max-width {
+  @apply px-2 md:px-6 lg:px-10;
+  max-width: min(70rem, 100%);
+}
+
+.markdown-body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+  @apply text-neutral-700;
+  background-color: #fff;
+}
+.Xlogo path {
+  fill: black;
+}
+.Xlogo {
+  @apply flex h-10 w-8 items-center justify-center;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  @apply text-left;
+}
+
+.markdown-body h1 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+  @apply text-[1.5rem] md:text-[2rem] lg:text-[2.3rem];
+}
+
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+  @apply text-[1.25rem] md:text-[1.75rem] lg:text-[2.0625rem];
+}
+
+.markdown-body h3 {
+  @apply text-[1.125rem] md:text-[1.5rem] lg:text-[1.8rem];
+}
+
+.markdown-body h4 {
+  @apply text-[1rem] md:text-[1.125rem] lg:text-[1.25rem];
+}
+
+.markdown-body h5 {
+  @apply text-[0.875rem] md:text-[1rem] lg:text-[1.125rem];
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  @apply text-[0.85rem] md:text-[0.875rem] lg:text-[0.9rem];
+}
+
+.markdown-body p {
+  margin-bottom: 1rem;
+  @apply text-left text-[1rem];
+}
+
+.markdown-body em {
+  font-style: italic;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body del {
+  text-decoration: line-through;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+  margin-bottom: 1rem;
+}
+
+.markdown-body ul ul,
+.markdown-body ol ol,
+.markdown-body ul ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  @apply flex flex-col;
+}
+
+.markdown-body ul {
+  list-style-type: disc;
+}
+
+.markdown-body ol {
+  list-style-type: decimal;
+}
+
+.markdown-body li {
+  margin-bottom: 0.25em;
+}
+
+.markdown-body blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid #eaecef;
+  margin: 1.5em 0;
+}
+
+.markdown-body img {
+  width: 100%;
+  height: auto;
+  @apply rounded-2xl;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  @apply text-left;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  border: 1px solid #eaecef;
+  padding: 0.75rem;
+  @apply align-top;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+  background-color: #f6f8fa;
+  color: #24292e;
+}
+
+.markdown-body table td {
+  color: #24292e;
+}
+
+.markdown-body table tr:nth-child(even) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body table tr:hover {
+  background-color: #f1f3f5;
+}
+
+.markdown-body table caption {
+  margin-top: 0.5rem;
+  color: #6a737d;
+  font-style: italic;
+}
+
+/*!End of markdown styling*/
+
+/*! Footer */
+.social {
+  @apply h-5 w-5 transition-all hover:scale-95  hover:cursor-pointer hover:text-blue-700;
+}
+.custom-max-w-smaller {
+  max-width: 10rem;
+}
+
+.lower-footer {
+  @apply bg-black px-4 py-8 text-left;
+}
+
+footer {
+  @apply bg-neutral-900 text-white;
+}
+
+.upper-footer {
+  @apply flex flex-col flex-wrap gap-4 px-8 py-8 sm:flex-row sm:items-start sm:justify-between sm:gap-8 sm:py-16;
+}
+
+.logo-wrapper {
+  @apply mb-4 flex flex-col gap-2 sm:mb-0;
+}
+
+.lists-wrapper {
+  @apply mb-4 flex flex-col gap-2 sm:mb-0;
+}
+
+.lists {
+  @apply flex flex-col gap-2;
+}
+
+.social-media-wrapper {
+  @apply flex justify-start gap-2 md:justify-end;
+}
+
+.categories {
+  @apply hover:text-slate-400 capitalize;
+}
+
+.categories::first-letter {
+  @apply capitalize;
+}
+/*! end of Footer */
+
+/*! navbar start */
+.full-header {
+  @apply fixed z-[1] flex w-full items-center justify-between bg-white px-3 py-3 transition-all max-md:text-sm;
+}
+
+.full-header button {
+  @apply max-w-fit flex-1 rounded-lg bg-primary p-4 text-white hover:text-primary hover:bg-white border border-primary transition-all ;
+}
+
+.clickable-header{
+  @apply flex-1 flex justify-center
+}
+
+.sub-buttons {
+  @apply flex flex-1 cursor-pointer items-center gap-6 flex-shrink max-md:gap-2;
+}
+
+.button-container {
+  @apply flex flex-1 justify-end ;
+}
+.title-container {
+  @apply flex flex-1 max-w-[40%] justify-start max-sm:max-w-none;
+}
+
+.title-container h1 {
+  @apply flex-1 cursor-pointer text-left text-4xl text-black;
+}
+.logo{
+  @apply flex-1 cursor-pointer text-left text-4xl text-black;
+}
+.title-container h1:hover {
+  @apply text-accent-light;
+}
+
+.sub-buttons a {
+  @apply text-black;
+}
+.sub-buttons a:hover {
+  @apply text-accent-darker;
+}
+
+.hamburger-menu {
+  @apply cursor-pointer p-3 text-2xl text-black;
+}
+@media (max-width: 640px) {
+  .sub-buttons {
+    display: none;
+  }
+  .full-header button {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+/*! End of navbar start */

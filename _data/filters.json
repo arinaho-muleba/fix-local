@@ -1,0 +1,76 @@
+{
+  "locations": ["Johannesburg", "Cape Town"],
+  "categories": [
+    "Electricity",
+    "Environment",
+    "Health",
+    "Parks and Recreation",
+    "Roads, Transport and Traffic",
+    "Safety and Security",
+    "Storm Water and Flooding",
+    "Water and Sanitation"
+  ],
+  "subcategories": {
+    "Electricity": [
+      "blackout/supply",
+      "meter reading",
+      "pre-paid meter",
+      "streetlights",
+      "wires/cables",
+      "equipment damage / exposure"
+    ],
+    "Environment": [
+      "pollution",
+      "litter",
+      "fallen trees"
+    ],
+    "Health": [
+      "clinic challenges",
+      "hospital challenges",
+      "air pollution",
+      "water pollution",
+      "wood safety",
+      "pest control",
+      "noise pollution"
+    ],
+    "Parks and Recreation": [
+      "fallen trees",
+      "grass cutting",
+      "sports grounds",
+      "parks",
+      "playgrounds",
+      "communal gyms"
+    ],
+    "Roads, Transport and Traffic": [
+      "potholes",
+      "pavements",
+      "traffic lights",
+      "storm water drains",
+      "streetlights",
+      "public transport (buses, taxis, trains)",
+      "unsafe road surface, markings and signage"
+    ],
+    "Safety and Security": [
+      "neighborhood watch",
+      "police/cpf",
+      "lighting in the area",
+      "long grass",
+      "squatters",
+      "drugs/drinking behaviour",
+      "fire fighting"
+    ],
+    "Storm Water and Flooding": [
+      "flooding",
+      "roads and stormwater",
+      "storm water blockages"
+    ],
+    "Water and Sanitation": [
+      "pipes",
+      "sewerage",
+      "streams and rivers",
+      "refuse collection",
+      "toilets",
+      "no water"
+    ]
+  }
+}

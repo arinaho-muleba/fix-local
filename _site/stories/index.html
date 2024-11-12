@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>How to Report It</title>
+        <link rel="stylesheet" href="/css/styles.css"/>
+    </head>
+    <body>
+        <nav><header class="full-header h-14 px-5 mb-6">
+    <section class="clickable-header flex items-center" onclick$={handleClickHeader}>
+        <section class="title-container flex items-center justify-between">
+            <img src="/assets/media/text-colored-logo.svg" alt="Logo"/>
+        </section>
+        <ul class="sub-buttons justify-end flex gap-4 flex-1 text-neutral-700">
+            <li>Home</li>
+            <li>About us</li>
+            <li>Partners</li>
+            <li>Contact us</li>
+        </ul>
+    </section>
+    <p class="hamburger-menu" onclick$={handleClick}>
+        <LuAlignJustify/>
+    </p>
+    <style></style>
+</header></nav>
+        <main class="px-4 py-6">
+            <h1>Articles</h1>
+            <input
+            type="text" id="search" placeholder="Search articles...">
+            <!-- Location Filter -->
+            <select id="locationFilter">
+                <option value="">Select Location</option>
+                
+                    <option value="Johannesburg">Johannesburg</option>
+                
+                    <option value="Cape Town">Cape Town</option>
+                
+            </select>
+            <!-- Category Filter -->
+            <select id="categoryFilter">
+                <option value="">Select Category</option>
+                
+                    <option value="Electricity">Electricity</option>
+                
+                    <option value="Environment">Environment</option>
+                
+                    <option value="Health">Health</option>
+                
+                    <option value="Parks and Recreation">Parks and Recreation</option>
+                
+                    <option value="Roads, Transport and Traffic">Roads, Transport and Traffic</option>
+                
+                    <option value="Safety and Security">Safety and Security</option>
+                
+                    <option value="Storm Water and Flooding">Storm Water and Flooding</option>
+                
+                    <option value="Water and Sanitation">Water and Sanitation</option>
+                
+            </select>
+            <!-- Subcategory Filter (Populated Dynamically) -->
+            <select id="subcategoryFilter">
+                <option value="">Select Subcategory</option>
+                
+                    <optgroup label="Electricity">
+                        
+                            <option value="blackout/supply">blackout/supply</option>
+                        
+                            <option value="meter reading">meter reading</option>
+                        
+                            <option value="pre-paid meter">pre-paid meter</option>
+                        
+                            <option value="streetlights">streetlights</option>
+                        
+                            <option value="wires/cables">wires/cables</option>
+                        
+                            <option value="equipment damage / exposure">equipment damage / exposure</option>
+                        
+                    </optgroup>
+                
+                    <optgroup label="Environment">
+                        
+                            <option value="pollution">pollution</option>
+                        
+                            <option value="litter">litter</option>
+                        
+                            <option value="fallen trees">fallen trees</option>
+                        
+                    </optgroup>
+                
+                    <optgroup label="Health">
+                        
+                            <option value="clinic challenges">clinic challenges</option>
+                        
+                            <option value="hospital challenges">hospital challenges</option>
+                        
+                            <option value="air pollution">air pollution</option>
+                        
+                            <option value="water pollution">water pollution</option>
+                        
+                            <option value="wood safety">wood safety</option>
+                        
+                            <option value="pest control">pest control</option>
+                        
+                            <option value="noise pollution">noise pollution</option>
+                        
+                    </optgroup>
+                
+                    <optgroup label="Parks and Recreation">
+                        
+                            <option value="fallen trees">fallen trees</option>
+                        
+                            <option value="grass cutting">grass cutting</option>
+                        
+                            <option value="sports grounds">sports grounds</option>
+                        
+                            <option value="parks">parks</option>
+                        
+                            <option value="playgrounds">playgrounds</option>
+                        
+                            <option value="communal gyms">communal gyms</option>
+                        
+                    </optgroup>
+                
+                    <optgroup label="Roads, Transport and Traffic">
+                        
+                            <option value="potholes">potholes</option>
+                        
+                            <option value="pavements">pavements</option>
+                        
+                            <option value="traffic lights">traffic lights</option>
+                        
+                            <option value="storm water drains">storm water drains</option>
+                        
+                            <option value="streetlights">streetlights</option>
+                        
+                            <option value="public transport (buses, taxis, trains)">public transport (buses, taxis, trains)</option>
+                        
+                            <option value="unsafe road surface, markings and signage">unsafe road surface, markings and signage</option>
+                        
+                    </optgroup>
+                
+                    <optgroup label="Safety and Security">
+                        
+                            <option value="neighborhood watch">neighborhood watch</option>
+                        
+                            <option value="police/cpf">police/cpf</option>
+                        
+                            <option value="lighting in the area">lighting in the area</option>
+                        
+                            <option value="long grass">long grass</option>
+                        
+                            <option value="squatters">squatters</option>
+                        
+                            <option value="drugs/drinking behaviour">drugs/drinking behaviour</option>
+                        
+                            <option value="fire fighting">fire fighting</option>
+                        
+                    </optgroup>
+                
+                    <optgroup label="Storm Water and Flooding">
+                        
+                            <option value="flooding">flooding</option>
+                        
+                            <option value="roads and stormwater">roads and stormwater</option>
+                        
+                            <option value="storm water blockages">storm water blockages</option>
+                        
+                    </optgroup>
+                
+                    <optgroup label="Water and Sanitation">
+                        
+                            <option value="pipes">pipes</option>
+                        
+                            <option value="sewerage">sewerage</option>
+                        
+                            <option value="streams and rivers">streams and rivers</option>
+                        
+                            <option value="refuse collection">refuse collection</option>
+                        
+                            <option value="toilets">toilets</option>
+                        
+                            <option value="no water">no water</option>
+                        
+                    </optgroup>
+                
+            </select>
+            <!-- Article List -->
+            <ul id="articleList">
+                
+                    <a href="/stories/article1/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="story" data-location="City A" data-title="Sample Article 5" data-description="This is a sample article description.">
+                        <article>
+                            <img src="" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                            <h2 class="text-neutral-700 font-bold text-lg px-1">Sample Article 5</h2>
+                            <p class="text-neutral-700 text-sm px-1">This is a sample article description.</p>
+                        </article>
+                    </a>
+                
+                    <a href="/stories/article2/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="story" data-location="City A" data-title="Sample Article 2" data-description="This is a sample article description.">
+                        <article>
+                            <img src="" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                            <h2 class="text-neutral-700 font-bold text-lg px-1">Sample Article 2</h2>
+                            <p class="text-neutral-700 text-sm px-1">This is a sample article description.</p>
+                        </article>
+                    </a>
+                
+                    <a href="/stories/article3/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="story" data-location="City A" data-title="Sample Article 4" data-description="This is a sample article description.">
+                        <article>
+                            <img src="" alt="Article Image" class="w-full h-auto rounded-md mb-4">
+                            <h2 class="text-neutral-700 font-bold text-lg px-1">Sample Article 4</h2>
+                            <p class="text-neutral-700 text-sm px-1">This is a sample article description.</p>
+                        </article>
+                    </a>
+                
+            </ul>
+        </main>
+        <footer><footer>
+    <section class="upper-footer">
+        <section class="logo-wrapper">
+            <a href="/">
+                <img src="/assets/media/text-logo.svg" class="custom-max-w-smaller" alt="fix local logo" width="152" height="29"/>
+            </a>
+            <p>FixLocal aims to empower South African communities to solve real-world problems.</p>
+        </section>
+        <ul class="lists-wrapper">
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer" href="/">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer" href="/About-us">
+                    About us
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer">
+                    Partners
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer">
+                    Contact us
+                </a>
+            </li>
+            <li>
+                <a class="hover:text-slate-400 cursor-pointer" href="/Terms-and-Conditions">
+                    Terms and Conditions
+                </a>
+            </li>
+        </ul>
+        <section class="lists-wrapper">
+            <ul class="lists">
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Electricity
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Environment
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Health
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Parks and Recreation
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Roads, Transport and Traffic
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Safety and Security
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Storm Water and Flooding
+                        </a>
+                    </li>
+                
+                    <li key="" class="first-letter:capitalize hover:text-slate-400">
+                        <a>
+                            Water and Sanitation
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+        <section class="lists">
+            <strong>Connect with us</strong>
+            <section class="social-media-wrapper">
+                <a>
+                    <LuFacebook class="social"/>
+                </a>
+                <a>
+                    <LuYoutube class="social"/>
+                </a>
+            </section>
+        </section>
+    </section>
+    <section class="lower-footer">
+        Copyright 2024 &copy; fixlocal.org
+    </section>
+</footer></footer>
+        <script src="./assets/js/filter.js"></script>
+        <!-- JS to handle filtering -->
+    </body>
+</html>
