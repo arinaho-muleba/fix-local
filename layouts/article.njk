@@ -6,12 +6,11 @@
 </head>
 <body >
     <nav>{% include "../partials/nav.njk" %}</nav>~
-    <main class="pt-6"> 
+    <main> 
         <header>
             <h1>{{ title }}</h1>
             <p>{{ description }}</p>
         </header>
-
         <article>
             {{ content | safe }}
         </article>
