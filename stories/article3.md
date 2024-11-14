@@ -1,10 +1,52 @@
 ---
-title: "Sample Article 4"
-description: "This is a sample article description."
-location: "City A"
-category: "Safety"
-subcategory: ["Fire", "Lighting"]
+electedId: "10e2aba0-f6d4-43d0-9fe6-264979aa4a68"
+type: 3
+title: "Helping township entrepreneurs with solar power"
+description: "A new project is providing portable solar power kits to entrepreneurs in townships and rural areas, enabling them to start and sustain their businesses. The EcoBoxx Entrepreneur Kits include essential tools and training, allowing participants to offer services and potentially earn up to R1,000 per week."
+headerImage: "https://storageforfixlocal.blob.core.windows.net/dev/content/10e2aba0-f6d4-43d0-9fe6-264979aa4a68/images/10e2aba0-f6d4-43d0-9fe6-264979aa4a68.webp"
+tags:
+  - "electricity"
+  - "safety and security"
+  - "blackout/supply"
+  - "lighting in the area"
+locationId: "567141f7-f0b1-46e1-96a8-a72fc5c28e48"
+author: null
+authorImage: null
+readTime: null
+id: "10e2aba0-f6d4-43d0-9fe6-264979aa4a68"
+location: null
 ---
-# Sample Article
+# Helping township entrepreneurs with solar power
+![Placeholder Image](https://storageforfixlocal.blob.core.windows.net/dev/content/10e2aba0-f6d4-43d0-9fe6-264979aa4a68/images/10e2aba0-f6d4-43d0-9fe6-264979aa4a68.webp)
 
-This is the content of the sample article.
+To help entrepreneurs in townships and rural areas, a new project is giving out portable solar power kits to help them start and keep their businesses going.
+
+Many entrepreneurs in these areas struggle to get reliable power for their businesses. This lack of infrastructure stops them from making money and improving their lives.
+
+The Community Chest, led by CEO Lorenzo Davids, introduced the EcoBoxx Entrepreneur Kits, which are portable solar power tools to help small business owners. These kits are light and include solar panels that give up to 50 hours of power. They come with important tools like LED lights, a USB fan, hair clippers, and a cellphone charging cable, allowing entrepreneurs to offer services like haircuts and mobile charging.
+
+The project helps 963 people in the Cape Town area by giving them tools and business training. By using solar energy, these entrepreneurs can run barbershops and other businesses, possibly earning up to R1,000 per week.
+
+The project encourages participants to find community needs and create services or products to meet them. This approach not only supports entrepreneurship but also promotes community development and safety.
+
+Acknowledgements:
+
+
+Original article written by: South Africa the Good News
+
+Photograph: 
+Supplied by:  South Africa the Good News
+
+
+[Source](https://www.sagoodnews.co.za/portable-solar-power-kits-for-township-entrepreneurs/)
+
+---
+
+- [How to ESCALATE your issue](/content/5c82dc08-0baf-410a-8de9-f7959a4beb3d/)
+
+- [How to set up a STREET WhatsApp GROUP](/content/d6dea590-a527-494e-a551-c338f3bac46b/)
+- [How to set up a RESIDENTS' or RATE PAYERS' ASSOCIATION](/content/70f67bab-f596-433f-9f13-f6545cff700e/)
+- [How to set up a NEIGHBOURHOOD WATCH](/content/475ff4fc-c8c6-4c0c-a454-6f6dc42c6ce8/)
+- [How to set up or join a COMMUNITY POLICING FORUM (CPF)](/content/475ff4fc-c8c6-4c0c-a454-6f6dc42c6ce8/)
+- [How to ORGANISE to create change](/content/2797a122-a084-4237-8d99-8e1c4aea4f6e/)
+- [How to use MEDIA to create pressure for change](/content/c13796b6-860b-4830-ba7f-c0113cf9daae/)

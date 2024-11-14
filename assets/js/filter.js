@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const subcategoryFilter = document.getElementById("subcategoryFilter");
   const locationFilter = document.getElementById("locationFilter");
   const searchInput = document.getElementById("search");
-  const articles = document.querySelectorAll("div a");
+  const articles = document.querySelectorAll("div article");
 
   const subcategoriesData = {
     locations: ["Johannesburg", "Cape Town"],
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchText = searchInput.value.toLowerCase();
 
     articles.forEach((article) => {
-      const articleTags = article.dataset.tags.toLowerCase().split('$ ');
+      const articleTags = article.dataset.tags.toLowerCase().split("$ ");
       const articleLocation = article.dataset.location.toLowerCase();
       const articleTitle = article
         .querySelector("h2")

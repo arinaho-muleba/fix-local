@@ -253,11 +253,11 @@ footer {
 }
 
 .full-header button {
-  @apply max-w-fit flex-1 rounded-lg bg-primary p-4 text-white hover:text-primary hover:bg-white border border-primary transition-all ;
+  @apply max-w-fit flex-1 rounded-lg bg-primary p-4 text-white hover:text-primary hover:bg-white border border-primary transition-all;
 }
 
-.clickable-header{
-  @apply flex-1 flex justify-center
+.clickable-header {
+  @apply flex-1 flex justify-center;
 }
 
 .sub-buttons {
@@ -265,7 +265,7 @@ footer {
 }
 
 .button-container {
-  @apply flex flex-1 justify-end ;
+  @apply flex flex-1 justify-end;
 }
 .title-container {
   @apply flex flex-1 max-w-[40%] justify-start max-sm:max-w-none;
@@ -274,7 +274,7 @@ footer {
 .title-container h1 {
   @apply flex-1 cursor-pointer text-left text-4xl text-black;
 }
-.logo{
+.logo {
   @apply flex-1 cursor-pointer text-left text-4xl text-black;
 }
 .title-container h1:hover {
@@ -307,3 +307,219 @@ footer {
 }
 
 /*! End of navbar start */
+
+/*! Solution Card*/
+
+article {
+  @apply h-full w-full flex flex-col flex-1 max-w-[28rem] flex-grow cursor-pointer rounded-lg bg-background-light-accent text-black transition-all duration-300 hover:shadow-lg;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 650;
+  line-height: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  line-height: 120%;
+}
+.card-image {
+  @apply h-48 flex w-full rounded-t-lg bg-black bg-cover bg-center bg-no-repeat;
+}
+
+.card-body {
+  @apply flex flex-1  w-full flex-col justify-between  gap-3 h-36;
+}
+
+.type {
+  @apply flex h-min w-min min-w-large justify-center rounded-b-lg px-4 py-3 font-semibold text-white;
+}
+
+.gray-text {
+  @apply text-gray-600;
+}
+
+.image {
+  @apply h-10 w-10 rounded-full object-cover;
+}
+
+.lighter-gray-text {
+  @apply text-gray-500;
+}
+
+span {
+  @apply h-2 w-2 rounded-full bg-neutral-300;
+}
+
+.semi-bold-light-gray-text {
+  @apply font-semibold text-gray-500;
+}
+
+.tag-wrapper {
+  @apply flex w-full gap-1;
+}
+
+.tag {
+  @apply w-max rounded-xl bg-white px-2 py-1 font-semibold;
+}
+
+.tag:hover {
+  @apply w-max rounded-xl px-2 py-1 font-semibold;
+}
+
+.more-tags {
+  @apply flex flex-1 items-center justify-end truncate p-1 font-semibold;
+}
+
+.solutions-wrapper {
+  @apply grid-auto-fit-minmax min-w-full items-center justify-center gap-8;
+}
+
+.grid-auto-fit-minmax {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-auto-rows: auto;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/*!end of Solution Card*/
+
+/*!Start of find solution*/
+
+.wrapper {
+  @apply w-full text-left;
+}
+
+.heading {
+  @apply text-left text-2xl font-normal text-neutral-900;
+}
+
+.input-wrapper {
+  @apply flex h-11 w-full rounded-md border border-neutral-300 bg-white transition-colors;
+}
+
+.input-wrapper:focus-within {
+  @apply border-accent-yellow;
+}
+
+#input-wrapper input {
+  @apply min-w-[3rem] flex-grow rounded-md border-none px-4 focus:outline-none;
+}
+
+button.search-button {
+  @apply px-4 text-gray-500 focus:outline-none;
+}
+
+button:focus {
+  @apply outline-none;
+}
+
+.inner-wrapper {
+  @apply flex flex-col gap-3;
+}
+
+.search-button {
+  @apply rounded-r-md bg-white p-2;
+}
+
+.search-icon {
+  @apply h-6 w-6 text-gray-300;
+}
+
+.tags-wrapper {
+  @apply flex flex-wrap gap-1;
+}
+.tag {
+  @apply cursor-pointer rounded-xl border border-accent-blue  px-5 py-[0.4rem] font-semibold  transition-all;
+}
+.arrow {
+  @apply ml-1 inline;
+}
+
+#filters-background {
+  @apply flex flex-col gap-4 rounded bg-neutral-50 p-2;
+}
+
+#filters-section {
+  @apply lg:flex-row lg:items-end;
+}
+
+#filters-section section {
+  @apply flex gap-2 lg:items-end  max-sm:flex-col;
+}
+
+#filters-section .location-button {
+  @apply lg:hidden;
+}
+
+#filters-section .label {
+  @apply cursor-pointer text-xs text-accent-blue transition-all hover:underline max-lg:hidden;
+}
+
+#filters-section section select,
+div select {
+  @apply flex-1 rounded-sm border border-black bg-white px-3 py-2 shadow-sm hover:bg-gray-100 max-sm:w-full;
+  line-height: 1.3;
+}
+
+.selected-category::first-letter {
+  text-transform: capitalize;
+}
+
+option {
+  @apply first-letter:capitalize;
+}
+
+#tags {
+  @apply relative h-10 gap-2 rounded-sm border border-black;
+  background: white
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="gray"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>')
+    no-repeat right 10px center;
+  background-size: 16px 16px;
+  line-height: 1.3;
+}
+
+#tags:hover {
+  background: #f9f9f9
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="gray"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>')
+    no-repeat right 10px center;
+  background-size: 16px 16px;
+  line-height: 1.3;
+}
+
+.tags {
+  @apply h-full cursor-pointer bg-white p-2 hover:bg-gray-300;
+}
+
+.subtag-item {
+  @apply flex w-full items-center justify-start gap-2 py-1 hover:bg-blue-100;
+}
+
+p {
+  @apply first-letter:capitalize;
+}
+
+#second {
+  flex: 2;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="gray"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>')
+    no-repeat right 10px center;
+  background-size: 16px 16px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #999;
+}
+
+/*!end of find Solution*/

@@ -1,10 +1,70 @@
 ---
-title: "Sample Article 2"
-description: "This is a sample article description."
-location: "City A"
-category: "Safety"
-subcategory: ["Fire", "Lighting"]
+electedId: "033ad17a-86aa-4ad2-b4e1-1f70811ca88e"
+type: 3
+title: "Women changing communities with plastic"
+description: "The article highlights how South African women are transforming plastic waste into valuable resources while empowering their communities. Initiatives like All Women Recycling and the Rethaka Foundation showcase innovative solutions that address environmental issues and support local development."
+headerImage: "https://storageforfixlocal.blob.core.windows.net/dev/content/033ad17a-86aa-4ad2-b4e1-1f70811ca88e/images/033ad17a-86aa-4ad2-b4e1-1f70811ca88e.webp"
+tags:
+  - "environment"
+  - "health"
+  - "pollution"
+  - "litter"
+  - "water pollution"
+locationId: "567141f7-f0b1-46e1-96a8-a72fc5c28e48"
+author: null
+authorImage: null
+readTime: null
+id: "033ad17a-86aa-4ad2-b4e1-1f70811ca88e"
+location: null
 ---
-# Sample Article
+# Through recycling plastic, 5 women drive change in their communities
 
-This is the content of the sample article.
+![Placeholder Image](https://storageforfixlocal.blob.core.windows.net/dev/content/033ad17a-86aa-4ad2-b4e1-1f70811ca88e/images/033ad17a-86aa-4ad2-b4e1-1f70811ca88e.webp)
+
+Plastic waste is a big problem for the environment and health worldwide. Even though people try to recycle, a lot of plastic still ends up in landfills in South Africa. This waste harms the environment and is a missed chance to save resources.
+
+Some South African women have found new ways to use plastic waste, helping their communities:
+
+1. **Lynn Worsley — All Women Recycling**  
+   Lynn Worsley started All Women Recycling in Cape Town to cut down on plastic waste and help women. The group turns old plastic bottles into eco-friendly gift boxes and teaches women business and sales skills.
+
+2. **Thato Kgathlanye & Rea Ngwane — Rethaka Foundation**  
+   Thato Kgathlanye and Rea Ngwane's Rethaka Foundation turns plastic bags into school bags with solar lights. These bags help kids in areas without electricity in South Africa stay safe and study.
+
+3. **Salphy Nkoana — The Masupatsela Women’s Cooperative**  
+   Salphy Nkoana started the Masupatsela Women’s Cooperative in Tembisa to help women fight poverty with proactive steps.
+
+4. **Quinette Goosen, Glinise Howard & Olive Grimsel — Uitenhage Recycling Mula Swop-Shop Project**  
+   In the Eastern Cape, Quinette Goosen, Glinise Howard, and Olive Grimsel get kids involved in recycling by giving them points for taking part.
+
+5. **Nelisiwe Radebe — Remarkable Waste Management**  
+   Nelisiwe Radebe started Remarkable Waste Management to organize waste better and stop it from polluting the environment.
+
+## Get involved  
+You can help support these projects and fight extreme poverty by joining campaigns like [Tell President Ramaphosa: Let's #BetheGeneration to End Extreme Poverty!](https://www.globalcitizen.org/en/festival/south-africa/?subPage=/en/action/tell-president-ramaphosa-lets-be-the-generation/).
+
+Acknowledgements:
+
+
+Original article written by: 	Mbali Kgame
+
+
+Photograph:
+
+Supplied by:  Petco
+
+
+[Source](https://www.globalcitizen.org/en/content/south-africa-women-plastic-waste-community-change/)
+        
+        
+    
+---
+
+- [How to ESCALATE your issue](/content/5c82dc08-0baf-410a-8de9-f7959a4beb3d/)
+
+- [How to set up a STREET WhatsApp GROUP](/content/d6dea590-a527-494e-a551-c338f3bac46b/)
+- [How to set up a RESIDENTS' or RATE PAYERS' ASSOCIATION](/content/70f67bab-f596-433f-9f13-f6545cff700e/)
+- [How to set up a NEIGHBOURHOOD WATCH](/content/475ff4fc-c8c6-4c0c-a454-6f6dc42c6ce8/)
+- [How to set up or join a COMMUNITY POLICING FORUM (CPF)](/content/475ff4fc-c8c6-4c0c-a454-6f6dc42c6ce8/)
+- [How to ORGANISE to create change](/content/2797a122-a084-4237-8d99-8e1c4aea4f6e/)
+- [How to use MEDIA to create pressure for change](/content/c13796b6-860b-4830-ba7f-c0113cf9daae/)

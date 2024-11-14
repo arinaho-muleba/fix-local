@@ -6,50 +6,101 @@
     </head>
     <body>
         <nav>{% include "./partials/nav.njk" %}</nav>
-        <main class="px-4 py-6">
-            <h1>Articles</h1>
-            <input
-            type="text" id="search" placeholder="Search articles...">
-            <!-- Location Filter -->
-            <select id="locationFilter">
-                <option value="">Select Location</option>
-                {% for location in filters.locations %}
-                    <option value="{{ location }}">{{ location }}</option>
-                {% endfor %}
-            </select>
-            <!-- Category Filter -->
-            <select id="categoryFilter">
-                <option value="">Select Category</option>
-                {% for category in filters.categories %}
-                    <option value="{{ category }}">{{ category }}</option>
-                {% endfor %}
-            </select>
-            <!-- Subcategory Filter (Populated Dynamically) -->
-            <select id="subcategoryFilter">
-                <option value="">Select Subcategory</option>
-                {% for category, subcategories in filters.subcategories %}
-                    <optgroup label="{{ category }}">
-                        {% for subcategory in subcategories %}
-                            <option value="{{ subcategory }}">{{ subcategory }}</option>
-                        {% endfor %}
-                    </optgroup>
-                {% endfor %}
-            </select>
+        <main class="px-4 py-12">
+            <search class="wrapper">
+                <section class="inner-wrapper">
+                    <h1 class="heading">What do you want to fix?</h1>
+                    <section id="filters-background">
+                        <p>Filters</p>
+                        <section id="filters-section" class="flex flex-col gap-3">
+                            <div id="first" class="flex flex-1 flex-col gap-1">
+                                <label class="label" for="places">
+                                    <p class="">Give permission to use my location</p>
+                                </label>
+                                <select id="locationFilter" class="flex h-10 flex-col items-start justify-center border border-black bg-white">
+                                    <option value="">Select Location</option>
+                                    {% for location in filters.locations %}
+                                        <option value="{{ location }}">{{ location }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button
+                                onclick$={useCurrentLocation}
+                                disabled={isFetchingLocation.value}
+                                class="location-button flex h-full w-full justify-center gap-2 rounded-md bg-accent-yellow p-2 font-semibold text-white">
+                                Current Location
+                            </button>
+                            <section id="second">
+                                <div id="first" class="flex flex-1 flex-col">
+                                    <select id="categoryFilter" class="flex h-10 flex-col items-start justify-center border border-black bg-white">
+                                        <option value="">Select Category</option>
+                                        {% for category in filters.categories %}
+                                            <option value="{{ category }}">{{ category }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div id="first" class="flex h-10 flex-1 flex-col justify-center">
+                                    <select id="subcategoryFilter" class=" p-2 border rounded bg-neutral-50">
+                                        <option value="">Select Subcategory</option>
+                                        <!-- Subcategories will be populated by JavaScript based on selected category -->
+                                    </select>
+                                </div>
+                            </section>
+                        </section>
+                    </section>
+                    <section id="input-wrapper" class="input-wrapper focus-within:border-secondary-orange">
+                        <input type="text" id="search" placeholder="Search..." class="focus:outline-none">
+                    </section>
+                </section>
+            </search>
             <!-- Article List -->
-            <ul id="articleList">
-                {% for article in collections.story %}
-                    <a href="{{ article.url }}" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
-                        <article>
-                            <img src="{{ article.data.headerImage }}" alt="Article Image" class="w-full h-auto rounded-md mb-4">
-                            <h2 class="text-neutral-700 font-bold text-lg px-1">{{ article.data.title }}</h2>
-                            <p class="text-neutral-700 text-sm px-1">{{ article.data.description }}</p>
-                        </article>
-                    </a>
+            <div id="articleList" class="mt-4 solutions-wrapper">
+                {% for article in collections.howToReport %}
+                    <article>
+                        <a href="{{ article.url }}" class="flex h-full flex-grow justify-start" data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
+                            <section class="w-full h-full">
+                                <section class="justify-end flex card-image" style="background-image:url('{{ article.data.headerImage|url }}');">
+                                    <aside class="type bg-secondary-orange ">
+                                        story
+                                    </aside>
+                                </section>
+                                <section class="bg-neutral-50">
+                                    <section class="w-full flex text-white px-3 py-2 gap-2 bg-secondary-orange h-8">
+                                        <h2>{{ article.data.location }}</h2>
+                                    </section>
+                                    <section class="flex flex-col justify-between h-full">
+                                        <h3 class="gray-text flex-1 px-3">{{ article.data.title }}</h3>
+                                        <section class="flex gap-3 items-center px-3">
+                                            <img
+                                                decoding="async"
+                                                loading="lazy"
+                                                class="image"
+                                                src="https://storageforfixlocal.blob.core.windows.net/dev/logo-square.png"
+                                                alt="Rounded avatar"/>
+                                            <p class="lighter-gray-text">
+                                                by Fix Local
+                                            </p>
+                                            <span></span>
+                                            <p class="semi-bold-light-gray-text">
+                                                {{ article.data.readTime }} min read
+                                            </p>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </a>
+                        <section class="tag-wrapper px-3 pb-3 bg-neutral-50 rounded-b-lg">
+                            {% for tag in article.data.tags | slice(2) %}
+                                <a key="{{ tag }}" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                                    <abbr title="{{ tag }}" class="no-underline">{{ tag }}</abbr>
+                                </a>
+                            {% endfor %}
+                        </section>
+                    </article>
                 {% endfor %}
-            </ul>
+            </div>
         </main>
         <footer>{% include "./partials/footer.njk" %}</footer>
-        <script src="./assets/js/filter.js"></script>
-        <!-- JS to handle filtering -->
+        <script src="/assets/js/filter.js"></script>
     </body>
 </html>

@@ -4,7 +4,7 @@
         <title>How to Report It</title>
         <link rel="stylesheet" href="/css/styles.css"/>
     </head>
-    <body class="bg-neutral-200">
+    <body>
         <nav><header class="full-header h-14 px-5 mb-6">
     <section class="clickable-header flex items-center" onclick$={handleClickHeader}>
         <section class="title-container flex items-center justify-between">
@@ -23,192 +23,208 @@
     <style></style>
 </header></nav>
         <main class="px-4 py-6">
-            <h1 class="text-blue-500 text-2xl font-semibold">How to fix</h1>
-            <input
-            type="text" id="search" placeholder="Search articles..." class="mt-4 p-2 border rounded">
-            <!-- Location Filter -->
-            <select id="locationFilter" class="mt-4 p-2 border rounded bg-neutral-50">
-                <option value="">Select Location</option>
-                
-                    <option value="Johannesburg">Johannesburg</option>
-                
-                    <option value="Cape Town">Cape Town</option>
-                
-            </select>
-            <!-- Category Filter -->
-            <select id="categoryFilter" class="mt-4 p-2 border rounded bg-neutral-50">
-                <option value="">Select Category</option>
-                
-                    <option value="Electricity">Electricity</option>
-                
-                    <option value="Environment">Environment</option>
-                
-                    <option value="Health">Health</option>
-                
-                    <option value="Parks and Recreation">Parks and Recreation</option>
-                
-                    <option value="Roads, Transport and Traffic">Roads, Transport and Traffic</option>
-                
-                    <option value="Safety and Security">Safety and Security</option>
-                
-                    <option value="Storm Water and Flooding">Storm Water and Flooding</option>
-                
-                    <option value="Water and Sanitation">Water and Sanitation</option>
-                
-            </select>
-            <!-- Subcategory Filter -->
-            <select id="subcategoryFilter" class="mt-4 p-2 border rounded bg-neutral-50">
-                <option value="">Select Subcategory</option>
-                
-                    <optgroup label="Electricity">
-                        
-                            <option value="blackout/supply">blackout/supply</option>
-                        
-                            <option value="meter reading">meter reading</option>
-                        
-                            <option value="pre-paid meter">pre-paid meter</option>
-                        
-                            <option value="streetlights">streetlights</option>
-                        
-                            <option value="wires/cables">wires/cables</option>
-                        
-                            <option value="equipment damage / exposure">equipment damage / exposure</option>
-                        
-                    </optgroup>
-                
-                    <optgroup label="Environment">
-                        
-                            <option value="pollution">pollution</option>
-                        
-                            <option value="litter">litter</option>
-                        
-                            <option value="fallen trees">fallen trees</option>
-                        
-                    </optgroup>
-                
-                    <optgroup label="Health">
-                        
-                            <option value="clinic challenges">clinic challenges</option>
-                        
-                            <option value="hospital challenges">hospital challenges</option>
-                        
-                            <option value="air pollution">air pollution</option>
-                        
-                            <option value="water pollution">water pollution</option>
-                        
-                            <option value="wood safety">wood safety</option>
-                        
-                            <option value="pest control">pest control</option>
-                        
-                            <option value="noise pollution">noise pollution</option>
-                        
-                    </optgroup>
-                
-                    <optgroup label="Parks and Recreation">
-                        
-                            <option value="fallen trees">fallen trees</option>
-                        
-                            <option value="grass cutting">grass cutting</option>
-                        
-                            <option value="sports grounds">sports grounds</option>
-                        
-                            <option value="parks">parks</option>
-                        
-                            <option value="playgrounds">playgrounds</option>
-                        
-                            <option value="communal gyms">communal gyms</option>
-                        
-                    </optgroup>
-                
-                    <optgroup label="Roads, Transport and Traffic">
-                        
-                            <option value="potholes">potholes</option>
-                        
-                            <option value="pavements">pavements</option>
-                        
-                            <option value="traffic lights">traffic lights</option>
-                        
-                            <option value="storm water drains">storm water drains</option>
-                        
-                            <option value="streetlights">streetlights</option>
-                        
-                            <option value="public transport (buses, taxis, trains)">public transport (buses, taxis, trains)</option>
-                        
-                            <option value="unsafe road surface, markings and signage">unsafe road surface, markings and signage</option>
-                        
-                    </optgroup>
-                
-                    <optgroup label="Safety and Security">
-                        
-                            <option value="neighborhood watch">neighborhood watch</option>
-                        
-                            <option value="police/cpf">police/cpf</option>
-                        
-                            <option value="lighting in the area">lighting in the area</option>
-                        
-                            <option value="long grass">long grass</option>
-                        
-                            <option value="squatters">squatters</option>
-                        
-                            <option value="drugs/drinking behaviour">drugs/drinking behaviour</option>
-                        
-                            <option value="fire fighting">fire fighting</option>
-                        
-                    </optgroup>
-                
-                    <optgroup label="Storm Water and Flooding">
-                        
-                            <option value="flooding">flooding</option>
-                        
-                            <option value="roads and stormwater">roads and stormwater</option>
-                        
-                            <option value="storm water blockages">storm water blockages</option>
-                        
-                    </optgroup>
-                
-                    <optgroup label="Water and Sanitation">
-                        
-                            <option value="pipes">pipes</option>
-                        
-                            <option value="sewerage">sewerage</option>
-                        
-                            <option value="streams and rivers">streams and rivers</option>
-                        
-                            <option value="refuse collection">refuse collection</option>
-                        
-                            <option value="toilets">toilets</option>
-                        
-                            <option value="no water">no water</option>
-                        
-                    </optgroup>
-                
-            </select>
+            <search class="wrapper">
+                <section class="inner-wrapper">
+                    <h1 class="heading">What do you want to fix?</h1>
+                    <section id="filters-background">
+                        <p>Filters</p>
+                        <section id="filters-section" class="flex flex-col gap-3">
+                            <div id="first" class="flex flex-1 flex-col gap-1">
+                                <label class="label" for="places">
+                                    <p class="">Give permission to use my location</p>
+                                </label>
+                                <select id="locationFilter" class="flex h-10 flex-col items-start justify-center border border-black bg-white">
+                                    <option value="">Select Location</option>
+                                    
+                                        <option value="Johannesburg">Johannesburg</option>
+                                    
+                                        <option value="Cape Town">Cape Town</option>
+                                    
+                                </select>
+                            </div>
+                            <button
+                                onclick$={useCurrentLocation}
+                                disabled={isFetchingLocation.value}
+                                class="location-button flex h-full w-full justify-center gap-2 rounded-md bg-accent-yellow p-2 font-semibold text-white">
+                                Current Location
+                            </button>
+                            <section id="second">
+                                <div id="first" class="flex flex-1 flex-col">
+                                    <select id="categoryFilter" class="flex h-10 flex-col items-start justify-center border border-black bg-white">
+                                        <option value="">Select Category</option>
+                                        
+                                            <option value="Electricity">Electricity</option>
+                                        
+                                            <option value="Environment">Environment</option>
+                                        
+                                            <option value="Health">Health</option>
+                                        
+                                            <option value="Parks and Recreation">Parks and Recreation</option>
+                                        
+                                            <option value="Roads, Transport and Traffic">Roads, Transport and Traffic</option>
+                                        
+                                            <option value="Safety and Security">Safety and Security</option>
+                                        
+                                            <option value="Storm Water and Flooding">Storm Water and Flooding</option>
+                                        
+                                            <option value="Water and Sanitation">Water and Sanitation</option>
+                                        
+                                    </select>
+                                </div>
+                                <div id="first" class="flex h-10 flex-1 flex-col justify-center">
+                                    <select id="subcategoryFilter" class=" p-2 border rounded bg-neutral-50">
+                                        <option value="">Select Subcategory</option>
+                                        <!-- Subcategories will be populated by JavaScript based on selected category -->
+                                    </select>
+                                </div>
+                            </section>
+                        </section>
+                    </section>
+                    <section id="input-wrapper" class="input-wrapper focus-within:border-accent-green">
+                        <input type="text" id="search" placeholder="Search..." class="focus:outline-none">
+                    </section>
+                </section>
+            </search>
             <!-- Article List -->
-            <div class="flex flex-wrap gap-4 mt-4">
+            <div id="articleList" class="mt-4 solutions-wrapper">
                 
-                    <a href="/howToFix/article1/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="howToFix$ electricity$ meter reading" data-location="" data-title="How to manage your Eskom electricity bill with self-read meter readings" data-description="This article provides guidance on how to effectively manage your electricity costs by submitting self-read meter readings to Eskom. It outlines the steps for sending readings, understanding your meter, and checking your bill for discrepancies to help control energy use and save money.">
-                        <article>
-                            <img src="https://storageforfixlocal.blob.core.windows.net/dev/content/033ca81e-630d-42fc-8430-55b8998a302d/images/033ca81e-630d-42fc-8430-55b8998a302d.webp" alt="Article Image" class="w-full h-auto rounded-md mb-4">
-                            <h2 class="text-neutral-700 font-bold text-lg px-1">How to manage your Eskom electricity bill with self-read meter readings</h2>
-                            <p class="text-neutral-700 text-sm px-1">This article provides guidance on how to effectively manage your electricity costs by submitting self-read meter readings to Eskom. It outlines the steps for sending readings, understanding your meter, and checking your bill for discrepancies to help control energy use and save money.</p>
-                        </article>
-                    </a>
+                    <article>
+                        <a href="/howToReport/article1/" class="flex h-full flex-grow justify-start" data-tags="howToReport$ health$ clinic challenges$ hospital challenges$ air pollution$ water pollution$ food safety$ pest control$ noise pollution" data-location="Johannesburg" data-title="How to report HEALTH SERVICES AND ENVIRONMENTAL HEALTH issues in Joburg" data-description="This article details how to report health services and environmental health issues in Johannesburg, including clinic and hospital challenges, air and water pollution, and pest control. It provides contact information for relevant departments such as the City of Johannesburg Environmental Health Department, Legal Health and Regulatory Affairs, and the Department of Forestry, Fisheries and the Environment, along with instructions for logging issues through the City’s e-services platform.">
+                            <section class="w-full h-full">
+                                <section class="justify-start flex card-image" style="background-image:url('https://storageforfixlocal.blob.core.windows.net/dev/content/140d5e4e-76d7-4fb4-877a-a6f0aa3f43e6/images/140d5e4e-76d7-4fb4-877a-a6f0aa3f43e6.webp');">
+                                    <aside class="type bg-accent-green ">
+                                        Fix it yourself
+                                    </aside>
+                                </section>
+                                <section class="bg-neutral-50">
+                                    <section class="w-full flex text-white px-3 py-2 gap-2 bg-accent-green h-8">
+                                        <h2>Johannesburg</h2>
+                                    </section>
+                                    <section class="flex flex-col justify-between h-full">
+                                        <h3 class="gray-text flex-1 px-3">How to report HEALTH SERVICES AND ENVIRONMENTAL HEALTH issues in Joburg</h3>
+                                        <section class="flex gap-3 items-center px-3">
+                                            <img
+                                                decoding="async"
+                                                loading="lazy"
+                                                class="image"
+                                                src="https://storageforfixlocal.blob.core.windows.net/dev/logo-square.png"
+                                                alt="Rounded avatar"/>
+                                            <p class="lighter-gray-text">
+                                                by Fix Local
+                                            </p>
+                                            <span></span>
+                                            <p class="semi-bold-light-gray-text">
+                                                 min read
+                                            </p>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </a>
+                        <section class="tag-wrapper px-3 pb-3 bg-neutral-50 rounded-b-lg">
+                            
+                                <a key="howToReport,health,clinic challenges,hospital challenges,air pollution" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-accent-green border-accent-green text-accent-green" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                                    <abbr title="howToReport,health,clinic challenges,hospital challenges,air pollution" class="no-underline">howToReport,health,clinic challenges,hospital challenges,air pollution</abbr>
+                                </a>
+                            
+                                <a key="water pollution,food safety,pest control,noise pollution" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-accent-green border-accent-green text-accent-green" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                                    <abbr title="water pollution,food safety,pest control,noise pollution" class="no-underline">water pollution,food safety,pest control,noise pollution</abbr>
+                                </a>
+                            
+                        </section>
+                    </article>
                 
-                    <a href="/howToFix/article2/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="howToFix$ electricity$ pre-paid meter" data-location="" data-title="How to fix Common Prepaid Meter Errors" data-description="This article provides a comprehensive guide on troubleshooting common errors encountered with prepaid meters, including error codes and their solutions. It emphasizes the importance of reporting issues and offers practical steps to resolve problems without needing to contact a technician.">
-                        <article>
-                            <img src="https://storageforfixlocal.blob.core.windows.net/dev/content/13535db8-1bdb-4275-8a15-ccb0cb4787bd/images/13535db8-1bdb-4275-8a15-ccb0cb4787bd.webp" alt="Article Image" class="w-full h-auto rounded-md mb-4">
-                            <h2 class="text-neutral-700 font-bold text-lg px-1">How to fix Common Prepaid Meter Errors</h2>
-                            <p class="text-neutral-700 text-sm px-1">This article provides a comprehensive guide on troubleshooting common errors encountered with prepaid meters, including error codes and their solutions. It emphasizes the importance of reporting issues and offers practical steps to resolve problems without needing to contact a technician.</p>
-                        </article>
-                    </a>
+                    <article>
+                        <a href="/howToReport/article2/" class="flex h-full flex-grow justify-start" data-tags="howToReport$ roads, transport and traffic$ electricity$ water and sanitation$ parks and recreation$ potholes$ traffic lights$ storm water drains$ blackout/supply$ wires/cables$ pipes$ sewerage$ refuse collection$ grass cutting$ fallen trees" data-location="Cape Town" data-title="How to report a problem in Joburg" data-description="This article provides a comprehensive guide on how to report various city service issues in Johannesburg, such as potholes, power cuts, and water leaks. It outlines specific contact methods for different problems, including phone numbers, emails, and online platforms to ensure effective communication with city services.">
+                            <section class="w-full h-full">
+                                <section class="justify-start flex card-image" style="background-image:url('https://storageforfixlocal.blob.core.windows.net/dev/content/40433651-a77f-4d57-ad2b-a3362f201359/images/40433651-a77f-4d57-ad2b-a3362f201359.webp');">
+                                    <aside class="type bg-accent-green ">
+                                        Fix it yourself
+                                    </aside>
+                                </section>
+                                <section class="bg-neutral-50">
+                                    <section class="w-full flex text-white px-3 py-2 gap-2 bg-accent-green h-8">
+                                        <h2>Cape Town</h2>
+                                    </section>
+                                    <section class="flex flex-col justify-between h-full">
+                                        <h3 class="gray-text flex-1 px-3">How to report a problem in Joburg</h3>
+                                        <section class="flex gap-3 items-center px-3">
+                                            <img
+                                                decoding="async"
+                                                loading="lazy"
+                                                class="image"
+                                                src="https://storageforfixlocal.blob.core.windows.net/dev/logo-square.png"
+                                                alt="Rounded avatar"/>
+                                            <p class="lighter-gray-text">
+                                                by Fix Local
+                                            </p>
+                                            <span></span>
+                                            <p class="semi-bold-light-gray-text">
+                                                 min read
+                                            </p>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </a>
+                        <section class="tag-wrapper px-3 pb-3 bg-neutral-50 rounded-b-lg">
+                            
+                                <a key="howToReport,roads, transport and traffic,electricity,water and sanitation,parks and recreation,potholes,traffic lights,storm water drains" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-accent-green border-accent-green text-accent-green" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                                    <abbr title="howToReport,roads, transport and traffic,electricity,water and sanitation,parks and recreation,potholes,traffic lights,storm water drains" class="no-underline">howToReport,roads, transport and traffic,electricity,water and sanitation,parks and recreation,potholes,traffic lights,storm water drains</abbr>
+                                </a>
+                            
+                                <a key="blackout/supply,wires/cables,pipes,sewerage,refuse collection,grass cutting,fallen trees" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-accent-green border-accent-green text-accent-green" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                                    <abbr title="blackout/supply,wires/cables,pipes,sewerage,refuse collection,grass cutting,fallen trees" class="no-underline">blackout/supply,wires/cables,pipes,sewerage,refuse collection,grass cutting,fallen trees</abbr>
+                                </a>
+                            
+                        </section>
+                    </article>
                 
-                    <a href="/howToFix/article3/" class="article w-[24rem] shadow-sm bg-neutral-50 p-0 rounded-md hover:shadow-lg transition duration-200" data-tags="howToFix$ water and sanitation$ pipes$ meter reading" data-location="" data-title="How to fix household or garden leaks" data-description="This article provides guidance on identifying and repairing leaks in your home or garden, emphasizing the importance of reporting issues to local authorities. It includes tips on reading your water meter, checking for leaks, and safely starting repairs, while also advising when to consult a professional plumber.">
-                        <article>
-                            <img src="https://storageforfixlocal.blob.core.windows.net/dev/content/1fc2811b-92a6-4098-89df-4a7922448702/images/1fc2811b-92a6-4098-89df-4a7922448702.webp" alt="Article Image" class="w-full h-auto rounded-md mb-4">
-                            <h2 class="text-neutral-700 font-bold text-lg px-1">How to fix household or garden leaks</h2>
-                            <p class="text-neutral-700 text-sm px-1">This article provides guidance on identifying and repairing leaks in your home or garden, emphasizing the importance of reporting issues to local authorities. It includes tips on reading your water meter, checking for leaks, and safely starting repairs, while also advising when to consult a professional plumber.</p>
-                        </article>
-                    </a>
+                    <article>
+                        <a href="/howToReport/article3/" class="flex h-full flex-grow justify-start" data-tags="howToReport$ environment$ pollution$ litter$ fallen trees" data-location="Johannesburg" data-title="How to report issues on the ENVIRONMENT in Joburg" data-description="This article outlines how to report environmental issues in Johannesburg, such as pollution, litter, and noise complaints. It provides contact details for the City of Johannesburg Environmental Health Department, Pikitup Johannesburg for waste management, and the Johannesburg Metropolitan Police Department (JMPD) for noise pollution, with additional instructions on how to log faults through the City’s e-services platform.">
+                            <section class="w-full h-full">
+                                <section class="justify-start flex card-image" style="background-image:url('https://storageforfixlocal.blob.core.windows.net/dev/content/5454aa24-4cb8-4c2c-9f54-8732ec824e39/images/5454aa24-4cb8-4c2c-9f54-8732ec824e39.webp');">
+                                    <aside class="type bg-accent-green ">
+                                        Fix it yourself
+                                    </aside>
+                                </section>
+                                <section class="bg-neutral-50">
+                                    <section class="w-full flex text-white px-3 py-2 gap-2 bg-accent-green h-8">
+                                        <h2>Johannesburg</h2>
+                                    </section>
+                                    <section class="flex flex-col justify-between h-full">
+                                        <h3 class="gray-text flex-1 px-3">How to report issues on the ENVIRONMENT in Joburg</h3>
+                                        <section class="flex gap-3 items-center px-3">
+                                            <img
+                                                decoding="async"
+                                                loading="lazy"
+                                                class="image"
+                                                src="https://storageforfixlocal.blob.core.windows.net/dev/logo-square.png"
+                                                alt="Rounded avatar"/>
+                                            <p class="lighter-gray-text">
+                                                by Fix Local
+                                            </p>
+                                            <span></span>
+                                            <p class="semi-bold-light-gray-text">
+                                                 min read
+                                            </p>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </a>
+                        <section class="tag-wrapper px-3 pb-3 bg-neutral-50 rounded-b-lg">
+                            
+                                <a key="howToReport,environment,pollution" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-accent-green border-accent-green text-accent-green" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                                    <abbr title="howToReport,environment,pollution" class="no-underline">howToReport,environment,pollution</abbr>
+                                </a>
+                            
+                                <a key="litter,fallen trees" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-accent-green border-accent-green text-accent-green" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                                    <abbr title="litter,fallen trees" class="no-underline">litter,fallen trees</abbr>
+                                </a>
+                            
+                        </section>
+                    </article>
                 
             </div>
         </main>
