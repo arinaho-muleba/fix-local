@@ -55,7 +55,7 @@
             </search>
             <!-- Article List -->
             <div id="articleList" class="mt-4 solutions-wrapper">
-                {% for article in collections.howToReport %}
+                {% for article in collections.howToFix %}
                     <article data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
                         <a href="{{ article.url }}" class="flex h-full flex-grow justify-start">
                             <section class="w-full h-full">

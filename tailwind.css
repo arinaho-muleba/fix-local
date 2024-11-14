@@ -524,9 +524,30 @@ select:focus {
 
 /*!end of find Solution*/
 
-
-.capped-width{
+/*!general */
+.capped-width {
   width: min(72rem, 100%);
   justify-self: center;
   @apply px-6;
 }
+
+/*! end of general styles*/
+
+/*!landing page  hero */
+#actions button {
+  @apply flex gap-2 rounded-lg px-5 py-2 text-base font-semibold  text-white transition-all hover:-translate-y-1 hover:shadow-lg  md:px-4 md:py-5 md:text-lg lg:text-2xl;
+}
+
+#actions .button {
+  @apply items-center flex gap-2 rounded-lg px-5 py-2 text-base font-semibold text-white transition-all hover:-translate-y-1 hover:shadow-lg md:px-3 md:py-4 md:text-lg lg:text-2xl max-sm:px-2;
+}
+
+#actions span {
+  @apply max-sm:hidden;
+}
+
+.icon {
+  @apply h-5 w-5 font-bold md:w-6;
+}
+
+/*!landing page  hero */

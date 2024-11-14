@@ -8,7 +8,6 @@
   </head>
   <body>
     <nav>{% include "./partials/nav.njk" %}</nav>
-
     <main class="py-10 bg-[#D1EBEF]">
       <div class="capped-width flex flex-col gap-4">
         <p class="text-xl md:text-2xl mt-12">
@@ -18,23 +17,21 @@
         <p>What would you like to learn about?</p>
         <div class="flex gap-4">
           <button onclick="window.location.href='./report/'" class="button bg-accent-blue whitespace-nowrap max-sm:flex-1">
-            1. How to Report It
+            <img src="./assets/media/report-it.svg" class="icon"/> 1. How to Report It
           </button>
           <button onclick="window.location.href='./fix/'" class="button bg-accent-green whitespace-nowrap max-sm:flex-1">
-            2. How to Fix It
+            <img src="./assets/media/fix-it.svg" class="icon"/> 2. How to Fix It
           </button>
         </div>
       </div>
     </main>
-
     <div class="bg-neutral-50 py-8">
       <div class="flex flex-col gap-6 capped-width">
         <h1 class="text-neutral-700 font-bold text-2xl">Success Stories:</h1>
-        
         <div id="articleList" class="mt-4 solutions-wrapper">
           {% for article in collections.story %}
             <article>
-              <a href="{{ article.url }}" class="flex h-full flex-grow justify-start" data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
+              <a href=".{{ article.url }}" class="flex h-full flex-grow justify-start" data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
                 <section class="w-full h-full bg-white">
                   <section class="justify-end flex card-image" style="background-image:url('{{ article.data.headerImage | url }}');">
                     <aside class="type bg-secondary-orange">
@@ -76,11 +73,9 @@
             </article>
           {% endfor %}
         </div>
-
-        <a href="/stories/" class="underline text-secondary-orange">See more Stories</a>
+        <a href="/stories/" class="underline text-secondary-orange">See more Stories...</a>
       </div>
     </div>
-
     <footer>{% include "./partials/footer.njk" %}</footer>
   </body>
 </html>
