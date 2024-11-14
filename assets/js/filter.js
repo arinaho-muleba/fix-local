@@ -77,16 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
   };
+
   // Populate subcategories based on selected category
   categoryFilter.addEventListener("change", function () {
     const selectedCategory = this.value;
+    console.log("", selectedCategory);
     // Clear previous options
     subcategoryFilter.innerHTML =
       '<option value="">Select Subcategory</option>';
 
     // Populate subcategory filter based on selected category
-    if (selectedCategory && subcategoriesData[selectedCategory]) {
-      subcategoriesData[selectedCategory].forEach((subcat) => {
+    if (selectedCategory && subcategoriesData.subcategories[selectedCategory]) {
+      subcategoriesData.subcategories[selectedCategory].forEach((subcat) => {
         const option = document.createElement("option");
         option.value = subcat;
         option.textContent = subcat;
@@ -112,12 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
     articles.forEach((article) => {
       const articleTags = article.dataset.tags.toLowerCase().split("$ ");
       const articleLocation = article.dataset.location.toLowerCase();
-      const articleTitle = article
-        .querySelector("h2")
-        .textContent.toLowerCase();
-      const articleDescription = article
-        .querySelector("p")
-        .textContent.toLowerCase();
+      const articleTitle = article.dataset.title.toLowerCase();
+      const articleDescription = article.dataset.description.toLowerCase();
 
       // Check if the article matches the filter
       const matchesCategory =
