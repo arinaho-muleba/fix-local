@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Site</title>
     <link rel="stylesheet" href="./css/styles.css"/>
   </head>
@@ -22,6 +24,7 @@
     </p>
     <style></style>
 </header></nav>
+
     <main class="py-10 bg-[#D1EBEF]">
       <div class="capped-width flex flex-col gap-4">
         <p class="text-xl md:text-2xl mt-12">
@@ -33,21 +36,24 @@
           <button onclick="window.location.href='./report/'" class="button bg-accent-blue whitespace-nowrap max-sm:flex-1">
             1. How to Report It
           </button>
-          <button onclick="window.location.href='./fix/'" class="button bg-accent-green whitespace-nowrap max-sm:flex-1">2. How to
-            Fix It</button>
+          <button onclick="window.location.href='./fix/'" class="button bg-accent-green whitespace-nowrap max-sm:flex-1">
+            2. How to Fix It
+          </button>
         </div>
       </div>
     </main>
-    <div class="bg-neutral-50">
+
+    <div class="bg-neutral-50 py-8">
       <div class="flex flex-col gap-6 capped-width">
         <h1 class="text-neutral-700 font-bold text-2xl">Success Stories:</h1>
-        <div id="articleList " class=" mt-4 solutions-wrapper ">
+        
+        <div id="articleList" class="mt-4 solutions-wrapper">
           
             <article>
               <a href="/stories/article1/" class="flex h-full flex-grow justify-start" data-tags="story$ water and sanitation$ health$ toilets$ water pollution" data-location="" data-title="Launch of mobile hygiene units at Bellhaven harm reduction centre" data-description="Advance Access &amp; Delivery South Africa has partnered with Viva Con Agua to introduce mobile hygiene units at the Bellhaven Harm Reduction Centre in Durban, aimed at improving hygiene for the homeless. The initiative, part of the Nina Manzi project, provides essential facilities like showers and toilets, ensuring dignity and access to clean water for over two thousand individuals.">
                 <section class="w-full h-full bg-white">
                   <section class="justify-end flex card-image" style="background-image:url('https://storageforfixlocal.blob.core.windows.net/dev/content/0af80a52-2d28-4638-bc93-31c6f4aa1444/images/0af80a52-2d28-4638-bc93-31c6f4aa1444.webp');">
-                    <aside class="type bg-secondary-orange ">
+                    <aside class="type bg-secondary-orange">
                       story
                     </aside>
                   </section>
@@ -78,11 +84,11 @@
               </a>
               <section class="tag-wrapper px-3 pb-3 bg-white rounded-b-lg">
                 
-                  <a key="story,water and sanitation,health" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                  <a key="story,water and sanitation,health" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}">
                     <abbr title="story,water and sanitation,health" class="no-underline">story,water and sanitation,health</abbr>
                   </a>
                 
-                  <a key="toilets,water pollution" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                  <a key="toilets,water pollution" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}">
                     <abbr title="toilets,water pollution" class="no-underline">toilets,water pollution</abbr>
                   </a>
                 
@@ -93,7 +99,7 @@
               <a href="/stories/article2/" class="flex h-full flex-grow justify-start" data-tags="story$ environment$ health$ pollution$ litter$ water pollution" data-location="" data-title="Women changing communities with plastic" data-description="The article highlights how South African women are transforming plastic waste into valuable resources while empowering their communities. Initiatives like All Women Recycling and the Rethaka Foundation showcase innovative solutions that address environmental issues and support local development.">
                 <section class="w-full h-full bg-white">
                   <section class="justify-end flex card-image" style="background-image:url('https://storageforfixlocal.blob.core.windows.net/dev/content/033ad17a-86aa-4ad2-b4e1-1f70811ca88e/images/033ad17a-86aa-4ad2-b4e1-1f70811ca88e.webp');">
-                    <aside class="type bg-secondary-orange ">
+                    <aside class="type bg-secondary-orange">
                       story
                     </aside>
                   </section>
@@ -124,11 +130,11 @@
               </a>
               <section class="tag-wrapper px-3 pb-3 bg-white rounded-b-lg">
                 
-                  <a key="story,environment,health" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                  <a key="story,environment,health" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}">
                     <abbr title="story,environment,health" class="no-underline">story,environment,health</abbr>
                   </a>
                 
-                  <a key="pollution,litter,water pollution" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                  <a key="pollution,litter,water pollution" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}">
                     <abbr title="pollution,litter,water pollution" class="no-underline">pollution,litter,water pollution</abbr>
                   </a>
                 
@@ -139,7 +145,7 @@
               <a href="/stories/article3/" class="flex h-full flex-grow justify-start" data-tags="story$ electricity$ safety and security$ blackout/supply$ lighting in the area" data-location="" data-title="Helping township entrepreneurs with solar power" data-description="A new project is providing portable solar power kits to entrepreneurs in townships and rural areas, enabling them to start and sustain their businesses. The EcoBoxx Entrepreneur Kits include essential tools and training, allowing participants to offer services and potentially earn up to R1,000 per week.">
                 <section class="w-full h-full bg-white">
                   <section class="justify-end flex card-image" style="background-image:url('https://storageforfixlocal.blob.core.windows.net/dev/content/10e2aba0-f6d4-43d0-9fe6-264979aa4a68/images/10e2aba0-f6d4-43d0-9fe6-264979aa4a68.webp');">
-                    <aside class="type bg-secondary-orange ">
+                    <aside class="type bg-secondary-orange">
                       story
                     </aside>
                   </section>
@@ -170,11 +176,11 @@
               </a>
               <section class="tag-wrapper px-3 pb-3 bg-white rounded-b-lg">
                 
-                  <a key="story,electricity,safety and security" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                  <a key="story,electricity,safety and security" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}">
                     <abbr title="story,electricity,safety and security" class="no-underline">story,electricity,safety and security</abbr>
                   </a>
                 
-                  <a key="blackout/supply,lighting in the area" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                  <a key="blackout/supply,lighting in the area" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}">
                     <abbr title="blackout/supply,lighting in the area" class="no-underline">blackout/supply,lighting in the area</abbr>
                   </a>
                 
@@ -182,15 +188,16 @@
             </article>
           
         </div>
+
         <a href="/stories/" class="underline text-secondary-orange">See more Stories</a>
       </div>
-    </body>
-  </body>
-</html></body></html></div><footer><footer>
+    </div>
+
+    <footer><footer>
     <section class="upper-footer">
         <section class="logo-wrapper">
             <a href="/">
-                <img src="~/assets/media/text-logo.svg" class="custom-max-w-smaller" alt="fix local logo" width="152" height="29"/>
+                <img src="./assets/media/text-logo.svg" class="custom-max-w-smaller" alt="fix local logo" width="152" height="29"/>
             </a>
             <p>FixLocal aims to empower South African communities to solve real-world problems.</p>
         </section>
@@ -289,4 +296,6 @@
     <section class="lower-footer">
         Copyright 2024 &copy; fixlocal.org
     </section>
-</footer></footer></body></html>
+</footer></footer>
+  </body>
+</html>
