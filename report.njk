@@ -6,8 +6,8 @@
     </head>
     <body>
         <nav>{% include "./partials/nav.njk" %}</nav>
-        <main class="px-4 py-12">
-            <search class="wrapper">
+        <main class="py-16">
+            <search class="wrapper capped-width">
                 <section class="inner-wrapper">
                     <h1 class="heading">What do you want to fix?</h1>
                     <section id="filters-background">
@@ -54,7 +54,7 @@
                 </section>
             </search>
             <!-- Article List -->
-            <div id="articleList" class="mt-4 solutions-wrapper">
+            <div id="articleList" class="mt-4 solutions-wrapper capped-width">
                 {% for article in collections.howToReport %}
                     <article data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
                         <a href="{{ article.url }}" class="flex h-full flex-grow justify-start">

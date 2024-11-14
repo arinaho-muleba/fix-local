@@ -6,68 +6,72 @@
   </head>
   <body>
     <nav>{% include "./partials/nav.njk" %}</nav>
-    <main class="px-6 py-10 bg-[#D1EBEF] flex flex-col gap-4">
-      <p class="text-xl md:text-2xl mt-12">
-        FixLocal helps you easily find out how to report local issues or fix them yourself with step-by-step guides and helpful
-        articles.
-      </p>
-      <p>What would you like to learn about?</p>
-      <div class="flex gap-4">
-        <button onclick="window.location.href='./report/'" class="button bg-accent-blue whitespace-nowrap max-sm:flex-1">
-          1. How to Report It
-        </button>
-        <button onclick="window.location.href='./fix/'" class="button bg-accent-green whitespace-nowrap max-sm:flex-1">2. How to
-          Fix It</button>
+    <main class="py-10 bg-[#D1EBEF]">
+      <div class="capped-width flex flex-col gap-4">
+        <p class="text-xl md:text-2xl mt-12">
+          FixLocal helps you easily find out how to report local issues or fix them yourself with step-by-step guides and helpful
+          articles.
+        </p>
+        <p>What would you like to learn about?</p>
+        <div class="flex gap-4">
+          <button onclick="window.location.href='./report/'" class="button bg-accent-blue whitespace-nowrap max-sm:flex-1">
+            1. How to Report It
+          </button>
+          <button onclick="window.location.href='./fix/'" class="button bg-accent-green whitespace-nowrap max-sm:flex-1">2. How to
+            Fix It</button>
+        </div>
       </div>
     </main>
-    <div class="flex flex-col gap-6">
-      <h1 class="text-neutral-700 font-bold text-2xl">Success Stories:</h1>
-      <div id="articleList " class=" mt-4 solutions-wrapper">
-        {% for article in collections.story %}
-          <article>
-            <a href="{{ article.url }}" class="flex h-full flex-grow justify-start" data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
-              <section class="w-full h-full bg-white">
-                <section class="justify-end flex card-image" style="background-image:url('{{ article.data.headerImage|url }}');">
-                  <aside class="type bg-secondary-orange ">
-                    story
-                  </aside>
-                </section>
-                <section class="bg-neutral-50">
-                  <section class="w-full flex text-white px-3 py-2 gap-2 bg-secondary-orange h-8">
-                    <h2>{{ article.data.location }}</h2>
+    <div class="bg-neutral-50">
+      <div class="flex flex-col gap-6 capped-width">
+        <h1 class="text-neutral-700 font-bold text-2xl">Success Stories:</h1>
+        <div id="articleList " class=" mt-4 solutions-wrapper ">
+          {% for article in collections.story %}
+            <article>
+              <a href="{{ article.url }}" class="flex h-full flex-grow justify-start" data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
+                <section class="w-full h-full bg-white">
+                  <section class="justify-end flex card-image" style="background-image:url('{{ article.data.headerImage|url }}');">
+                    <aside class="type bg-secondary-orange ">
+                      story
+                    </aside>
                   </section>
-                  <section class="flex flex-col justify-between h-full">
-                    <h3 class="gray-text flex-1 px-3">{{ article.data.title }}</h3>
-                    <section class="flex gap-3 items-center px-3">
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        class="image"
-                        src="https://storageforfixlocal.blob.core.windows.net/dev/logo-square.png"
-                        alt="Rounded avatar"/>
-                      <p class="lighter-gray-text">
-                        by Fix Local
-                      </p>
-                      <span></span>
-                      <p class="semi-bold-light-gray-text">
-                        {{ article.data.readTime }} min read
-                      </p>
+                  <section class="bg-white">
+                    <section class="w-full flex text-white px-3 py-2 gap-2 bg-secondary-orange h-8">
+                      <h2>{{ article.data.location }}</h2>
+                    </section>
+                    <section class="flex flex-col justify-between h-full">
+                      <h3 class="gray-text flex-1 px-3">{{ article.data.title }}</h3>
+                      <section class="flex gap-3 items-center px-3">
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          class="image"
+                          src="https://storageforfixlocal.blob.core.windows.net/dev/logo-square.png"
+                          alt="Rounded avatar"/>
+                        <p class="lighter-gray-text">
+                          by Fix Local
+                        </p>
+                        <span></span>
+                        <p class="semi-bold-light-gray-text">
+                          {{ article.data.readTime }} min read
+                        </p>
+                      </section>
                     </section>
                   </section>
                 </section>
+              </a>
+              <section class="tag-wrapper px-3 pb-3 bg-white rounded-b-lg">
+                {% for tag in article.data.tags | slice(2) %}
+                  <a key="{{ tag }}" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
+                    <abbr title="{{ tag }}" class="no-underline">{{ tag }}</abbr>
+                  </a>
+                {% endfor %}
               </section>
-            </a>
-            <section class="tag-wrapper px-3 pb-3 bg-neutral-50 rounded-b-lg">
-              {% for tag in article.data.tags | slice(2) %}
-                <a key="{{ tag }}" class="w-max rounded-xl bg-white px-2 py-1 font-semibold border truncate first-letter:capitalize hover:text-white hover:bg-secondary-orange border-secondary-orange text-secondary-orange" href="{/find-solution/both¿tags=${encodeURIComponent(encodeTag(tag))}&opened=${encodeURIComponent(encodeTag(tag))}}">
-                  <abbr title="{{ tag }}" class="no-underline">{{ tag }}</abbr>
-                </a>
-              {% endfor %}
-            </section>
-          </article>
-        {% endfor %}
+            </article>
+          {% endfor %}
+        </div>
+        <a href="/stories/" class="underline text-secondary-orange">See more Stories</a>
       </div>
-      <a href="/stories/" class="underline text-secondary-orange">See more Stories</a>
     </body>
   </body>
 </html></body></html></div><footer>{% include "./partials/footer.njk" %}</footer></body></html>

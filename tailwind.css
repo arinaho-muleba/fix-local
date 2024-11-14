@@ -373,7 +373,7 @@ span {
 }
 
 .solutions-wrapper {
-  @apply grid-auto-fit-minmax min-w-full items-center justify-center gap-8;
+  @apply grid-auto-fit-minmax items-center justify-center gap-8;
 }
 
 .grid-auto-fit-minmax {
@@ -523,3 +523,10 @@ select:focus {
 }
 
 /*!end of find Solution*/
+
+
+.capped-width{
+  width: min(72rem, 100%);
+  justify-self: center;
+  @apply px-6;
+}

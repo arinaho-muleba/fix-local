@@ -570,10 +570,6 @@ video {
   margin-top: 1rem;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
 .flex {
   display: flex;
 }
@@ -777,11 +773,6 @@ video {
   padding-right: 1.25rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -795,6 +786,11 @@ video {
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .py-2 {
@@ -1683,7 +1679,6 @@ span {
 }
 
 .solutions-wrapper {
-  min-width: 100%;
   align-items: center;
   justify-content: center;
   display: grid;
@@ -2000,6 +1995,13 @@ select:focus {
 }
 
 /*!end of find Solution*/
+
+.capped-width{
+  width: min(72rem, 100%);
+  justify-self: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 
 .first-letter\:capitalize::first-letter {
   text-transform: capitalize;
