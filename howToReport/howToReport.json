@@ -1,4 +1,4 @@
 {
-    "tags":"howToReport",
-    "layout":"article"
+  "tags": "howToReport",
+  "layout": "article.njk"
 }

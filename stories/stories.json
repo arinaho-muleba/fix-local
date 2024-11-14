@@ -1,3 +1,4 @@
 {
-    "tags":"story"
+    "tags":"story",
+    "layout":"article.njk"
 }
