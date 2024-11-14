@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const subcategoryFilter = document.getElementById("subcategoryFilter");
   const locationFilter = document.getElementById("locationFilter");
   const searchInput = document.getElementById("search");
-  const articles = document.querySelectorAll("div a");
+  const articles = document.querySelectorAll("div article");
 
   const subcategoriesData = {
     locations: ["Johannesburg", "Cape Town"],

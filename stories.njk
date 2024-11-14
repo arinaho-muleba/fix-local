@@ -56,8 +56,8 @@
             <!-- Article List -->
             <div id="articleList" class="mt-4 solutions-wrapper">
                 {% for article in collections.howToReport %}
-                    <article>
-                        <a href="{{ article.url }}" class="flex h-full flex-grow justify-start" data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
+                    <article data-tags="{{ article.data.tags | join('$ ') }}" data-location="{{ article.data.location }}" data-title="{{ article.data.title }}" data-description="{{ article.data.description }}">
+                        <a href="{{ article.url }}" class="flex h-full flex-grow justify-start">
                             <section class="w-full h-full">
                                 <section class="justify-end flex card-image" style="background-image:url('{{ article.data.headerImage|url }}');">
                                     <aside class="type bg-secondary-orange ">
