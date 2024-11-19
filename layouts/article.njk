@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-      <link rel="stylesheet" href="../css/styles.css"/>
-<head>
-    <title>{{ title }}</title>
-</head>
-<body >
-    <nav>{% include "../partials/nav.njk" %}</nav>~
-    <main> 
-        <header>
-            <h1>{{ title }}</h1>
-            <p>{{ description }}</p>
-        </header>
-        <article>
-            {{ content | safe }}
-        </article>
-    </main>
-
-    <footer>{% include "../partials/footer.njk" %}</footer>
-</body>
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <nav>{% include "../partials/nav.njk" %}</nav>~
+        <main>
+            <header>
+                <h1>{{ title }}</h1>
+                <p>{{ description }}</p>
+            </header>
+            <article>
+                {{ content | safe }}
+            </article>
+        </main>
+        <footer>{% include "../partials/footer.njk" %}</footer>
+    </body>
 </html>

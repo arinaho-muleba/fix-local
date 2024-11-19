@@ -1,8 +1,13 @@
+const markdownIt = require("markdown-it");
+
 module.exports = function (eleventyConfig) {
-  // Collection for articles
-  // eleventyConfig.addCollection("articles", function (collectionApi) {
-  //     return collectionApi.getFilteredByGlob("./src/articles/*.md");
-  // });
+  eleventyConfig.addCollection("articles", function (collectionApi) {
+    return collectionApi.getAll()[0].data.articles;
+  });
+
+  // Add markdown filter
+  const md = new markdownIt();
+  eleventyConfig.addFilter("markdown", (content) => md.render(content));
 
   return {
     dir: {
