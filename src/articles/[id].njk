@@ -1,0 +1,19 @@
+---
+pagination:
+  data: collections.articles
+  size: 1
+  alias: article
+permalink: "/articles/{{ article.id }}/"
+---
+
+<article>
+    <h1>{{ article.attributes.title }}</h1>
+    {% if article.attributes.headerImage.data %}
+        <img src="http://localhost:1337{{ article.attributes.headerImage.data.attributes.url }}" alt="{{ article.attributes.title }}">
+    {% endif %}
+    <div class="article-body">
+        {{ article.attributes.content | safe }}
+    </div>
+    <p><strong>Location:</strong> {{ article.attributes.location.data.attributes.name }}</p>
+    <p><strong>Read Time:</strong> {{ article.attributes.readTime }} min</p>
+</article>

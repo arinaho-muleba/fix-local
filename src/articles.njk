@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <nav>{% include "partials/nav.njk" %}</nav>
+    <main class="content">
+        <h1>{{ article.attributes.title }}</h1>
+        {% if article.attributes.headerImage.data %}
+            <img src="http://localhost:1337{{ article.attributes.headerImage.data.attributes.url }}" alt="{{ article.attributes.title }}" />
+        {% endif %}
+        <div class="article-content">
+            {{ article.attributes.content | safe }}
+        </div>
+    </main>
+    <footer>{% include "partials/footer.njk" %}
+    </footer>
+</body>
+</html>
