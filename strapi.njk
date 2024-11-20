@@ -11,7 +11,7 @@
         <main class="py-16 bg-[#D1EBEF]">
             <div class="flex flex-col gap-6 capped-width">
                 <h1 class="text-neutral-700 font-bold text-2xl mt-10">Success Stories:</h1>
-                <div id="articleList" class="mt-4">
+                <div id="articleList" class="mt-4 solutions-wrapper">
                     {% for article in articles %}
                         <a href="/articles/{{ article.id }}/" class="block">
                             <div class="w-[24rem] rounded-lg flex flex-col gap-6 p-2 bg-neutral-50 shadow-lg">
@@ -19,7 +19,10 @@
                                     <img src="http://localhost:1337{{ article.attributes.headerImage.data.attributes.formats.thumbnail.url }}" alt="{{ article.attributes.headerImage.data.attributes.name }}" class="rounded-md"/>
                                 {% endif %}
                                 <h2 class="text-neutral-700 font-bold text-16">{{ article.attributes.title }}</h2>
-                                <p class="text-neutral-700">{{ article.attributes.description }}</p>
+                                <p class="text-neutral-700">
+                                    {{ article.attributes.description }}
+                                    {% if article.attributes.description.length > 50 %}...{% endif %}
+                                </p>
                                 <p class="text-neutral-700">Location: {{ article.attributes.location.data.attributes.name }}</p>
                                 <p>ReadTime: {{ article.attributes.readTime }} min</p>
                             </div>
