@@ -18,12 +18,10 @@ export default async function () {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-
     const data = await response.json();
-    // Parse and return each content as HTML
     return data.data.map((item) => ({
-      ...item, // Assuming 'title' is a field in the API
-      contentHtml: md.render(item.attributes.content), // Render Markdown to HTML
+      ...item,
+      contentHtml: md.render(item.attributes.content),
     }));
   } catch (error) {
     console.error("Error fetching contents:", error);

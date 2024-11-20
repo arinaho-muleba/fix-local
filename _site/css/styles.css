@@ -614,16 +614,12 @@ video {
   height: 2rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-\[15rem\] {
   height: 15rem;
 }
 
-.w-\[24rem\] {
-  width: 24rem;
+.h-full {
+  height: 100%;
 }
 
 .w-full {
@@ -858,6 +854,10 @@ video {
 
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .text-2xl {

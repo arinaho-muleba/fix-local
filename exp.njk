@@ -9,15 +9,17 @@ permalink: "/articles/{{ article.id }}/index.html"
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{ article.title }}</title>
+        <title>{{ article.attributes.title }}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/styles.css"/>
     </head>
     <body>
-        <h1>{{ article.title }}</h1>
-        <div class="markdown-body capped-width">
+        <nav>{% include "./partials/nav.njk" %}</nav>
+        <h1>{{ article.attributes.title }}</h1>
+        <article class="markdown-body capped-width pt-16">
             {{ article.contentHtml | safe }}
-        </div>
+        </article>
+        <footer>{% include "./partials/footer.njk" %}</footer>
     </body>
 </html>
