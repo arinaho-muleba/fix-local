@@ -1,5 +1,4 @@
 name: Deploy Eleventy site to GitHub Pages
-
 on:
   push:
     branches:
@@ -26,10 +25,9 @@ jobs:
       - name: Build the site with Eleventy
         run: npx @11ty/eleventy
 
-      - name: Deploy to gh-pages
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add -A
-          git commit -m "Build Eleventy site"
-          git push origin `HEAD:gh-pages`
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
