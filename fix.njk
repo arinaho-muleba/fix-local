@@ -56,6 +56,14 @@
                     <section id="input-wrapper" class="input-wrapper focus-within:border-accent-green">
                         <input type="text" id="search" placeholder="Search..." class="focus:outline-none">
                     </section>
+                    <section id="page-find-search">
+
+                    </section>
+                    <script>
+                        window.addEventListener('DOMContentLoaded', (event) => {
+                        new PagefindUI({ element: "#page-find-search", showSubResults: true });
+                        });
+                    </script>
                 </section>
             </search>
             <!-- Article List -->

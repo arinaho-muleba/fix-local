@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"eleventy --serve\" \"npx tailwindcss -i ./tailwind.css -o ./_site/css/styles.css --watch\"",
+    "dev": "concurrently \"eleventy --serve\" \"npx tailwindcss -i ./tailwind.css -o ./_site/css/styles.css --watch\" \"npx pagefind --site _site --serve\"",
     "build": "eleventy"
   },
   "keywords": [],

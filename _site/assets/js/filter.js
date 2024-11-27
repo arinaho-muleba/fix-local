@@ -1,3 +1,5 @@
+let debounceTimer;
+
 document.addEventListener("DOMContentLoaded", () => {
   const categoryFilter = document.getElementById("categoryFilter");
   const subcategoryFilter = document.getElementById("subcategoryFilter");
@@ -77,18 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
   };
-
   // Populate subcategories based on selected category
   categoryFilter.addEventListener("change", function () {
     const selectedCategory = this.value;
-    console.log("", selectedCategory);
     // Clear previous options
     subcategoryFilter.innerHTML =
       '<option value="">Select Subcategory</option>';
 
     // Populate subcategory filter based on selected category
-    if (selectedCategory && subcategoriesData.subcategories[selectedCategory]) {
-      subcategoriesData.subcategories[selectedCategory].forEach((subcat) => {
+    if (selectedCategory && subcategoriesData[selectedCategory]) {
+      subcategoriesData[selectedCategory].forEach((subcat) => {
         const option = document.createElement("option");
         option.value = subcat;
         option.textContent = subcat;
@@ -102,44 +102,71 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle subcategory, location, and search changes
   subcategoryFilter.addEventListener("change", filterArticles);
   locationFilter.addEventListener("change", filterArticles);
-  searchInput.addEventListener("input", filterArticles);
+  searchInput.addEventListener("input",(event)=>{
+    clearTimeout(debounceTimer);
+    debounceTimer=setTimeout(()=>{
+      filterArticles()
 
+    },150)
+  } );
   // Function to filter articles based on selected filters
-  function filterArticles() {
+  async function filterArticles() {
+    const parent = document.querySelector("#articleList");
+    const spinner=document.querySelector("#spinner-wrapper")
+    parent.style.display="none"
+    spinner.style.display="flex"
     const selectedCategory = categoryFilter.value.toLowerCase();
     const selectedSubcategory = subcategoryFilter.value.toLowerCase();
     const selectedLocation = locationFilter.value.toLowerCase();
     const searchText = searchInput.value.toLowerCase();
 
-    articles.forEach((article) => {
-      const articleTags = article.dataset.tags.toLowerCase().split("$ ");
-      const articleLocation = article.dataset.location.toLowerCase();
-      const articleTitle = article.dataset.title.toLowerCase();
-      const articleDescription = article.dataset.description.toLowerCase();
+    const baseURL = window.env.BASE_URL+"/content";
+    const url = new URL(baseURL);
 
-      // Check if the article matches the filter
-      const matchesCategory =
-        !selectedCategory || articleTags.includes(selectedCategory);
-      const matchesSubcategory =
-        !selectedSubcategory || articleTags.includes(selectedSubcategory);
-      const matchesLocation =
-        !selectedLocation || articleLocation === selectedLocation;
-      const matchesSearch =
-        !searchText ||
-        articleTitle.includes(searchText) ||
-        articleDescription.includes(searchText);
+    url.searchParams.append("limit", -1);
+    if (selectedCategory !== "") {
+      url.searchParams.append("tags", selectedCategory);
+    }
+    if (selectedLocation !== "") {
+      url.searchParams.append(
+        "selectedLocation",
+        selectedLocation.charAt(0).toUpperCase() +
+          selectedLocation.slice(1).toLowerCase()
+      ); //make it sentence case to work with the back end
+    }
+    if (selectedSubcategory !== "") {
+      url.searchParams.append("tags", selectedSubcategory);
+    }
+    if (searchText !== "") {
+      url.searchParams.append("search", searchText);
+    }
 
-      // Show or hide the article based on match results
-      if (
-        matchesCategory &&
-        matchesSubcategory &&
-        matchesLocation &&
-        matchesSearch
-      ) {
-        article.style.display = "";
-      } else {
-        article.style.display = "none";
-      }
-    });
+    try {
+      const results = await fetch(url.toString());
+      const jsonBody = await results.json();
+
+      const orderMap = new Map(jsonBody.map((item, index) => [item.id, index]));
+
+      const sortedArticles = Array.from(articles).sort(
+        (a, b) => orderMap.get(a.id) - orderMap.get(b.id)
+      );
+      articles.forEach((item) => {
+        item.remove();
+      });
+      
+      sortedArticles.forEach((node) => {
+        if(orderMap.has(node.id)){
+          node.style.display = "";
+        }else{
+          node.style.display="none";
+        }
+        parent.appendChild(node);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+
+    parent.style.display="grid"
+    spinner.style.display="none"
   }
 });
