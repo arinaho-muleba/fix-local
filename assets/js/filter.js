@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     debounceTimer=setTimeout(()=>{
       filterArticles()
 
-    },300)
+    },150)
   } );
   // Function to filter articles based on selected filters
   async function filterArticles() {
