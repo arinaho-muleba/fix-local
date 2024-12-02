@@ -44,5 +44,3 @@ jobs:
           api_location: "api"
           output_location: ""
           skip_app_build: true
-        env:
-          BACKEND_URL: ${{ secrets.BACKEND_URL }}
