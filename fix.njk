@@ -3,8 +3,6 @@
     <head>
         <title>How to Report It</title>
         <link rel="stylesheet" href="../css/styles.css"/>
-            <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
-    <script type="module" src="/pagefind/pagefind-ui.js"></script>
     </head>
     <body>
         <nav>{% include "./partials/nav.njk" %}</nav>
@@ -58,14 +56,6 @@
                     <section id="input-wrapper" class="input-wrapper focus-within:border-accent-green">
                         <input type="text" id="search" placeholder="Search..." class="focus:outline-none">
                     </section>
-                    <section id="page-find-search">
-                        
-                    </section>
-                    <script>
-                        window.addEventListener('DOMContentLoaded', (event) => {
-                        new PagefindUI({ element: "#page-find-search", showSubResults: true });
-                        });
-                    </script>
                 </section>
             </search>
             <!-- Article List -->

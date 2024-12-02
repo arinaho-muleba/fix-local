@@ -1,7 +1,15 @@
 let debounceTimer;
 document.addEventListener("DOMContentLoaded", async () => {
-  const useSemanticSearch = false;
-
+  const useSemanticSearch = true;
+  const fullURL = window.location.href;
+  const type = fullURL.includes("fix")
+  ? "howToFix"
+  : fullURL.includes("stories")
+  ? "stories"
+  : fullURL.includes("report")
+  ? "howToReport"
+  : "";
+  console.log(fullURL)
   const pagefind = await import("/pagefind/pagefind.js");
   const categoryFilter = document.getElementById("categoryFilter");
   const subcategoryFilter = document.getElementById("subcategoryFilter");
@@ -125,6 +133,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const url = new URL(baseURL);
 
       url.searchParams.append("limit", -1);
+      url.searchParams.append("selectedType",type)
       if (selectedCategory !== "") {
         url.searchParams.append("tags", selectedCategory);
       }
@@ -173,19 +182,30 @@ document.addEventListener("DOMContentLoaded", async () => {
       spinner.style.display = "none";
     }else{
       pagefind.init();
+      if(searchText===""){
+        articles.forEach((article) =>{
+          article.style.display=""
+        })
+      }else{
 
-      const search= await pagefind.search(searchText)
-      const results=await Promise.all(
-      search.results.map(async (page)=>{
-        return await page.data()
-      })
-    )
-      console.log(results)
-      const filteredResults=results.filter((item) =>{
-          return(item.url.split("/").length === 4)
-        }).map((item) => item.url.split("/")[2])
-
-        console.log(filteredResults)
-    }
+        const search= await pagefind.search(searchText)
+        const results=await Promise.all(
+        search.results.map(async (page)=>{
+          return await page.data()
+        })
+      )
+        const filteredResults=results.filter((item) =>{
+            return(item.url.split("/").length === 4)
+          }).map((item) => item.url.split("/")[2])
+  
+        articles.forEach((article) =>{
+          if(filteredResults.includes(article.id)){
+            article.style.display=""
+          }else{
+            article.style.display="None"
+          }
+        })
+      }
+      }
   }
 });
