@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const useSemanticSearch = true;
   const fullURL = window.location.href;
   const type = fullURL.includes("fix")
-  ? "howToFix"
-  : fullURL.includes("stories")
-  ? "stories"
-  : fullURL.includes("report")
-  ? "howToReport"
-  : "";
+    ? "howToFix"
+    : fullURL.includes("stories")
+    ? "stories"
+    : fullURL.includes("report")
+    ? "howToReport"
+    : "";
   const pagefind = await import("/pagefind/pagefind.js");
   const categoryFilter = document.getElementById("categoryFilter");
   const subcategoryFilter = document.getElementById("subcategoryFilter");
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const url = new URL(baseURL);
 
       url.searchParams.append("limit", -1);
-      url.searchParams.append("selectedType",type)
+      url.searchParams.append("selectedType", type);
       if (selectedCategory !== "") {
         url.searchParams.append("tags", selectedCategory);
       }
@@ -153,14 +153,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       try {
         const results = await fetch(url.toString());
         const jsonBody = await results.json();
-        
+
         const orderedMap = jsonBody.reduce((acc, item) => {
           acc[item.id] = item.index;
           return acc;
         }, {});
         const sortedArticles = Array.from(articles).sort((a, b) => {
-          const aValue = orderedMap[a.id] !== undefined ? orderedMap[a.id] : Number.MIN_VALUE;
-          const bValue = orderedMap[b.id] !== undefined ? orderedMap[b.id] : Number.MIN_VALUE;
+          const aValue =
+            orderedMap[a.id] !== undefined
+              ? orderedMap[a.id]
+              : Number.MIN_VALUE;
+          const bValue =
+            orderedMap[b.id] !== undefined
+              ? orderedMap[b.id]
+              : Number.MIN_VALUE;
           return aValue - bValue;
         });
 
@@ -182,32 +188,33 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       parent.style.display = "grid";
       spinner.style.display = "none";
-    }else{
+    } else {
       pagefind.init();
-      if(searchText===""){
-        articles.forEach((article) =>{
-          article.style.display=""
-        })
-      }else{
+      if (searchText === "") {
+        articles.forEach((article) => {
+          article.style.display = "";
+        });
+      } else {
+        const search = await pagefind.search(searchText);
+        const results = await Promise.all(
+          search.results.map(async (page) => {
+            return await page.data();
+          })
+        );
+        const filteredResults = results
+          .filter((item) => {
+            return item.url.split("/").length === 4;
+          })
+          .map((item) => item.url.split("/")[2]);
 
-        const search= await pagefind.search(searchText)
-        const results=await Promise.all(
-        search.results.map(async (page)=>{
-          return await page.data()
-        })
-      )
-        const filteredResults=results.filter((item) =>{
-            return(item.url.split("/").length === 4)
-          }).map((item) => item.url.split("/")[2])
-  
-        articles.forEach((article) =>{
-          if(filteredResults.includes(article.id)){
-            article.style.display=""
-          }else{
-            article.style.display="None"
+        articles.forEach((article) => {
+          if (filteredResults.includes(article.id)) {
+            article.style.display = "";
+          } else {
+            article.style.display = "None";
           }
-        })
+        });
       }
-      }
+    }
   }
 });
