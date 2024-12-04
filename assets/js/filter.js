@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   : fullURL.includes("report")
   ? "howToReport"
   : "";
-  console.log(fullURL)
   const pagefind = await import("/pagefind/pagefind.js");
   const categoryFilter = document.getElementById("categoryFilter");
   const subcategoryFilter = document.getElementById("subcategoryFilter");
@@ -154,20 +153,23 @@ document.addEventListener("DOMContentLoaded", async () => {
       try {
         const results = await fetch(url.toString());
         const jsonBody = await results.json();
+        
+        const orderedMap = jsonBody.reduce((acc, item) => {
+          acc[item.id] = item.index;
+          return acc;
+        }, {});
+        const sortedArticles = Array.from(articles).sort((a, b) => {
+          const aValue = orderedMap[a.id] !== undefined ? orderedMap[a.id] : Number.MIN_VALUE;
+          const bValue = orderedMap[b.id] !== undefined ? orderedMap[b.id] : Number.MIN_VALUE;
+          return aValue - bValue;
+        });
 
-        const orderMap = new Map(
-          jsonBody.map((item, index) => [item.id, index])
-        );
-
-        const sortedArticles = Array.from(articles).sort(
-          (a, b) => orderMap.get(a.id) - orderMap.get(b.id)
-        );
         articles.forEach((item) => {
           item.remove();
         });
 
         sortedArticles.forEach((node) => {
-          if (orderMap.has(node.id)) {
+          if (node.id in orderedMap) {
             node.style.display = "";
           } else {
             node.style.display = "none";
